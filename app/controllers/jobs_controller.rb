@@ -4,6 +4,9 @@ class JobsController < ApplicationController
   end
 
   def new
+  end
+
+  def create
     @job = Job.new( current_user.id, params[:job] )
 
     if @job.valid?
@@ -20,10 +23,6 @@ class JobsController < ApplicationController
     end
 
     render :new
-
-  end
-
-  def create
   end
 
 end
