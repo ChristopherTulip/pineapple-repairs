@@ -1,18 +1,19 @@
 <!-- START PAGE -->
 <div class="wrapper">
   <!-- HEADER -->
-  <div id="header-landing">
+  
 
-    <%= render "shared/menu" %>
-
-    <%= render "pages/header" %>
-
+  <div class="banner homepage">
+    <%= render "shared/banner" %>
+  </div>
   </div>
   <!-- END HEADER -->
+  <div id="body-content">
   <%= render "pages/search" %>
   <%= render "pages/features" %>
   <%= render "pages/services" %>
   <%= render "pages/contact" %>
+</div>
 
   <%= render "shared/back_to_top" %>
 </div>

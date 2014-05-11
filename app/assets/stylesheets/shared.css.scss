@@ -1,0 +1,125 @@
+#body-content {
+	font-family: Helvetica, sans-serif;
+	p {
+		font-size: 1.5em;
+		line-height: 1.5em;
+	}
+
+	.container {
+		> p {
+			margin-bottom: 60px;
+		}
+	}
+
+
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.inner-section {
+	h2 {
+		letter-spacing: .8px;
+		margin-bottom: 30px;
+		margin-top: 0;
+		text-transform: uppercase;
+	}
+
+
+}
+
+
+
+.section-grey {
+	p {
+		font-weight: 300;
+	}
+}
+
+.devices {
+	
+
+	a {
+		-webkit-transition: all 100ms ease;
+	-moz-transition: all 100ms ease;
+	-ms-transition: all 100ms ease;
+	transition: all 100ms ease;
+		display: inline-block;
+		color: #fff;
+		&:hover {
+			text-decoration: none;
+			-webkit-transform: scale(1.2);	
+			color: $brand-color;
+		}
+	}
+
+	.device {
+		text-align: center;
+		
+	}
+	img {
+		height: 200px;
+	}
+}
+
+.services {
+
+	.service {
+
+	}
+	img {
+		height: 200px;
+	}
+}
+
+.features {
+
+	.feature {
+		h4 {
+			font-weight: 600;
+			letter-spacing: .5px;
+		}
+		span {
+			font-size: 4em;
+			display: inline-block;
+			margin: 10px 0 20px 0;
+			color: $brand-color;
+		}
+	}
+}
+
+.banner {
+	position: relative;
+
+	.shade {
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background-color: rgba(0,0,0,.2);
+	}
+
+	&.homepage {
+		background-image: image-url('dock_background.jpg');
+		background-size: cover;
+		background-position: center center;	
+	}
+	
+	.awesome-slogan {
+		position: relative;
+		z-index: 2;
+		h2, h4 {
+			span {
+				color: $brand-color;
+			}
+		}
+	h2 {
+		font-weight: 700;
+		letter-spacing: .5px;
+		span {
+
+		}
+	}
+}
+}
+

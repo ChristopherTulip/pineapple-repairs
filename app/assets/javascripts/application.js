@@ -1,4 +1,4 @@
-//= require turbolinks
+
 //= require jquery
 //= require jquery_ujs
 //= require jquery_plugins/jquery.parallax-1.1.3
@@ -12,3 +12,4 @@
 
 //= require inner-page
 //= require index-page
+//= require shared
