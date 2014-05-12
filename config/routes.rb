@@ -1,4 +1,5 @@
 PineappleRepairs::Application.routes.draw do
+  devise_for :contractors
   resources :jobs
 
   get "/contact",  to: "pages#contact"
