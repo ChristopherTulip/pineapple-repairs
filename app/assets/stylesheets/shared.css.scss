@@ -8,6 +8,10 @@
 	.container {
 		> p {
 			margin-bottom: 60px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -20,11 +24,27 @@
 }
 
 .inner-section {
+	text-align: center;
 	h2 {
 		letter-spacing: .8px;
+		font-weight: 700;
 		margin-bottom: 30px;
 		margin-top: 0;
 		text-transform: uppercase;
+
+		&.has-sub {
+			margin-bottom: 10px
+		}
+	}
+	h3 {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 
@@ -36,6 +56,23 @@
 	p {
 		font-weight: 300;
 	}
+}
+
+.section-transparent {
+	p, h2 {
+		color: #000;
+	}
+	background-color: transparent;
+	//text-shadow: 1px 1px rgba(0,0,0,.2);
+}
+
+.wrapper {
+	margin-top: 64px;
+	background-image: image-url('dock_background.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+
 }
 
 .devices {
@@ -90,38 +127,7 @@
 	}
 }
 
-.banner {
-	position: relative;
 
-	.shade {
-		position: absolute;
-		top: 0; right: 0; bottom: 0; left: 0;
-		background-color: rgba(0,0,0,.2);
-	}
-
-	&.homepage {
-		background-image: image-url('dock_background.jpg');
-		background-size: cover;
-		background-position: center center;	
-	}
-	
-	.awesome-slogan {
-		position: relative;
-		z-index: 2;
-		h2, h4 {
-			span {
-				color: $brand-color;
-			}
-		}
-	h2 {
-		font-weight: 700;
-		letter-spacing: .5px;
-		span {
-
-		}
-	}
-}
-}
 
 .icon-arw-down {
 	position: absolute;
