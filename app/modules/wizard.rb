@@ -7,14 +7,12 @@ module Wizard
     attr_writer :current_step
   end
 
-  def next_state current_state, back, id
-    self.current_step = current_state
+  def next_state back
     if valid?
       if back.present?
         previous_step
       elsif last_step?
         if all_valid?
-          self.class.clear_wizard(id)
           self.current_step = nil
           self.save!
         end
@@ -53,7 +51,7 @@ module Wizard
 
   def to_first_step id
     self.current_step = steps.first
-    self.class.clear_wizard(id)
+    # self.class.clear_wizard(id)
   end
 
   def first_step?
@@ -62,6 +60,10 @@ module Wizard
 
   def last_step?
     current_step == steps.last
+  end
+
+  def step? step_val
+    current_step == steps[step_val]
   end
 
   def all_valid?
@@ -74,34 +76,34 @@ module Wizard
     end
   end
 
-  module ClassMethods
-    def unfinished_object id
-      val = if Rails.cache.read(id)
-        Rails.cache.read(id)
-      else
-        {}
-      end
-    end
+  # module ClassMethods
+  #   def unfinished_object id
+  #     val = if Rails.cache.read(id)
+  #       Rails.cache.read(id)
+  #     else
+  #       {}
+  #     end
+  #   end
 
-    def clear_wizard id
-      Rails.cache.delete(id)
-    end
+  #   def clear_wizard id
+  #     Rails.cache.delete(id)
+  #   end
 
-    def save_unfinished_object id, object_hash
-      Rails.cache.write(id, object_hash, expires_in: WIZARD_DURATION)
-    end
+  #   def save_unfinished_object id, object_hash
+  #     Rails.cache.write(id, object_hash, expires_in: WIZARD_DURATION)
+  #   end
 
-    def progressWizard( object, id, back, object_hash )
-      object_hash = {} unless object_hash
+  #   def progressWizard( object, id, back, object_hash )
+  #     object_hash = {} unless object_hash
 
-      object_hash = self.unfinished_object(id).merge( object_hash )
-      # need to assign to obj.attributes for the object to be valid
-      object.attributes = object_hash
-      object_hash = object_hash.merge( { "current_step" => object.next_state( object_hash["current_step"], back, id ) } )
+  #     object_hash = self.unfinished_object(id).merge( object_hash )
+  #     # need to assign to obj.attributes for the object to be valid
+  #     object.attributes = object_hash
+  #     object_hash = object_hash.merge( { "current_step" => object.next_state( object_hash["current_step"], back, id ) } )
 
-      if object.new_record?
-        self.save_unfinished_object( id, object_hash )
-      end
-    end
-  end
+  #     if object.new_record?
+  #       self.save_unfinished_object( id, object_hash )
+  #     end
+  #   end
+  # end
 end

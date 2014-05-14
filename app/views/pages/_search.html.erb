@@ -3,7 +3,13 @@
   <div class="inner-section">
     <div class="container">
       <h2 class="text-center">What's Broken?</h2>
-
+      <%= form_for Job.new do |f| %>
+        <% @devices.each do |device| %>
+          <div class="col-sm-2 text-center">
+            <%= f.button :submit, name: "device_id", value: device.id %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

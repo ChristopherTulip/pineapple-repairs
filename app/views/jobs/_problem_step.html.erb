@@ -1,0 +1,6 @@
+<% @data.each do |problem| %>
+  <div class="col-sm-2 text-center">
+    <%= f.button problem.name, name: "problem_id", value: problem.id %>
+  </div>
+<% end %>
+
