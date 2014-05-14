@@ -7,15 +7,16 @@ $(function(){
 
 
 /** VEGAS SLIDEHSOW **/
-$(function() {
-	$.vegas('slideshow', {
-	  backgrounds:[
-			{ src:'assets/dock_background.jpg', fade:1000, delay: 9000 }
-	  ]
-	})('overlay', {
-	  src:'assets/overlays/02.png'
-	});
-});
+
+// $(function() {
+// 	$.vegas('slideshow', {
+// 	  backgrounds:[
+// 			{ src:'assets/dock_background.jpg', fade:1000, delay: 9000 }
+// 	  ]
+// 	})('overlay', {
+// 	  src:'assets/third/vegas/overlays/02.png'
+// 	});
+// });
 
 $(document).ready(function() {
 
@@ -26,10 +27,10 @@ $(document).ready(function() {
 	})
 
 	/** SMOOTH SCROLL SELECTOR **/
-	$('ul.scroll-nav a').smoothScroll({
-		easing: 'swing',
-		speed: 500
-	});
+	// $('ul.scroll-nav a').smoothScroll({
+	// 	easing: 'swing',
+	// 	speed: 500
+	// });
 	$('#back-top a').smoothScroll({
 		easing: 'swing',
 		speed: 500
@@ -56,13 +57,13 @@ $(document).ready(function() {
 
 	/** SCROLL SECTION FADE IN **/
 	var controller = $.superscrollorama();
-	controller.addTween('#features .container', TweenMax.from( $('#features .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
-	controller.addTween('#services .container', TweenMax.from( $('#services .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
-	controller.addTween('#portfolio .container', TweenMax.from( $('#portfolio .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
-	controller.addTween('#pricing-table .container', TweenMax.from( $('#pricing-table .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
-	controller.addTween('#quote .container', TweenMax.from( $('#quote .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
-	controller.addTween('#blog .container', TweenMax.from( $('#blog .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
-	controller.addTween('#team .container', TweenMax.from( $('#team .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#features .container', TweenMax.from( $('#features .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#services .container', TweenMax.from( $('#services .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#portfolio .container', TweenMax.from( $('#portfolio .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#pricing-table .container', TweenMax.from( $('#pricing-table .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#quote .container', TweenMax.from( $('#quote .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#blog .container', TweenMax.from( $('#blog .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
+	// controller.addTween('#team .container', TweenMax.from( $('#team .container'), 1.5, {css:{opacity:0}, ease:Quad.easeOut}));
 
 });
 

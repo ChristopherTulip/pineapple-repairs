@@ -14,46 +14,28 @@
     <div class="menus" id="myScrollspy">
       <ul class="nav scroll-nav">
         <li class="active">
-          <a href="/#top">
+          <%= link_to root_path do %>
             <i class="fa fa-home"></i>
             <span>Home</span>
-          </a>
+          <% end %>
         </li>
         <li>
-          <a href="/#search">
+          <%= link_to root_path(anchor: 'repairs') do %>
             <i class="fa fa-flask"></i>
-            <span>Search</span>
-          </a>
+            <span>Repairs</span>
+          <% end %>
         </li>
         <li>
-          <a href="/#features">
-            <i class="fa fa-laptop"></i>
-            <span>Features</span>
-          </a>
-        </li>
-        <li>
-          <a href="/#services">
-            <i class="fa fa-cog"></i>
-            <span>Services</span>
-          </a>
-        </li>
-        <li>
-          <a href="/#find-us">
-            <i class="fa fa-flask"></i>
-            <span>Find Us</span>
-          </a>
-        </li>
-        <li>
-          <a href="/#contact">
-            <i class="fa fa-envelope"></i>
-            <span>Contact</span>
-          </a>
-        </li>
-        <li>
-          <a href="/about">
+          <%= link_to about_path do %>
             <i class="fa fa-coffee"></i>
             <span>About Us</span>
-          </a>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to products_path do %>
+            <i class="fa fa-coffee"></i>
+            <span>Proucts</span>
+          <% end %>
         </li>
       </ul>
     </div>

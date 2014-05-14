@@ -1,83 +1,57 @@
 <!-- SECTION CONTACT  -->
-<div class="section-page-landing" id="find-us">
-  <div class="inner-section">
-    <h2 class="text-center">Come Visit</h2>
 
-    <iframe width="100%" height="500px" frameborder="0" style="border:0; pointer-events:
-  none" src="https://www.google.com/maps/embed/v1/place?q=Pineapple%20Repairs%2C%20West%20Cordova%20Street%2C%20Vancouver%2C%20BC%2C%20Canada&key=AIzaSyA5GIyCRj1mbiKhunRnxUygWW1jD3RaEjI"></iframe>
-  </div>
-</div>
-
-<div class="section-page-landing" id="contact">
+<div class="section-page-landing section-light-grey" id="contact">
   <div class="inner-section">
     <div class="container">
       <h2 class="text-center">Get in Touch</h2>
 
-      <h4>
+      <p class="text-center">
         Call us, drop by our (hard to find) shop, or even tweet us.  Currently we’re located inside of Waterfront Station located at the corner of Seymour and West Cordova street.  We are difficult to find inside, so give us a ring at any of the numbers below and we’ll be happy to guide you in.
-      </h4>
+      </p>
 
       <div class="row">
         <div class="col-md-6 text-center">
-          <h3>Address</h5>
-          <h4>
-            Waterfront Station<br>
-            25-601 West Cordova Street<br>
-            Vancouver, BC, Canada<br>
-          </h4>
+          <div class="contact-mode">
+            <h3>By Phone:</h3>
+            <h4>
+              Toll Free: 1 (888) 5 REPAIR<br>
+              Main Line: (778) 889-7642
+            </h4>
+          </div>
+          <div class="contact-mode">
+            <h3>By Email:</h3>
+            <h4>
+              <a href="mailto:pineapplerepairs@gmail.com">pineapplerepairs@gmail.com</a>
+            </h4>
+          </div>
+
+          <div  class="contact-mode">
+            <h3>In Person:</h3>
+            <h4>
+              Waterfront Station<br>
+              25-601 West Cordova Street<br>
+              Vancouver, BC, Canada<br>
+            </h4>
+          </div>
+          <div class="contact-mode social-icons">
+            <h3>Social:</h3>
+              <a href="https://www.facebook.com/pineapplerepairs" data-toggle="tooltip" title="Facebook">
+                <%=image_tag "social-icons/facebook.png", alt: "Facebook icon"%>
+              </a>
+              <a href="#fakelink" data-toggle="tooltip" title="Twitter">
+                <%=image_tag "social-icons/twitter.png", alt: "Twitter icon"%>
+              </a>
+              <a href="#fakelink" data-toggle="tooltip" title="Youtube">
+                <%=image_tag "social-icons/youtube.png", alt: "Youtube icon"%>
+              </a>
+          </div>
         </div>
 
         <div class="col-md-6 text-center">
-          <h3>Phone</h5>
-          <h4>
-            Toll Free: 1 (888) 5 REPAIR<br>
-            Main Line: 778 889 7642
-          </h4>
+          <iframe width="100%" height="500px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Pineapple%20Repairs%2C%20West%20Cordova%20Street%2C%20Vancouver%2C%20BC%2C%20Canada&key=AIzaSyA5GIyCRj1mbiKhunRnxUygWW1jD3RaEjI"></iframe>
+
         </div>
       </div>
-
-      <h4>
-        Or you can drop us a quick email below
-      </h4>
-
-      <form role="form" class="contact-form" id="ContactForm" method="post">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="form-group">
-            <input type="text" name="YourName" class="form-control" placeholder="Your name">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-            <input type="email" name="YourEmail" class="form-control" placeholder="Your email">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-            <input type="text" name="YourWebsite" class="form-control" placeholder="Your website">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-        <textarea class="form-control" name="YourMessage" style="height: 200px" placeholder="Your message"></textarea>
-        </div>
-        <div class="row">
-          <div class="col-sm-5">
-          </div>
-          <div class="col-sm-2">
-            <div class="form-group">
-            <h4 class="text-center" id="SimpleCaptcha"></h4>
-            <input type="text" name="captcha" class="form-control" placeholder="Result">
-            </div>
-          </div>
-          <div class="col-sm-5">
-          </div>
-        </div>
-        <p class="text-center">
-        <button type="submit" class="btn btn-default btn-teplok"><i class="fa fa-envelope"></i>Submit</button>
-        </p>
-      </form>
     </div>
   </div>
 </div>
-<!-- END SECTION CONTACT -->

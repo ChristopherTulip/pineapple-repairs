@@ -111,23 +111,23 @@ a.btn.btn-default.btn-teplok:focus{
 
 /** HEADER **/
 #header-landing{
-	height: 90vh;
+	/*height: 90vh;*/
 	position:relative;
 	background: rgba(1,1,1,.5);
-	min-height: 500px;
+	/*min-height: 500px;*/
 }
 #header-landing.inner-page{
 	height: auto;
 	position:relative;
 	background: rgba(1,1,1,.5);
 }
-#header-landing #logo{
+#logo {
 	position: absolute;
 	top: 0;
 	left: 0;
 	padding: 10px 0;
 }
-#header-landing #logo h1{
+#logo h1{
 	font-size: 32px;
 	line-height: 100%;
 	padding: 0;
@@ -135,19 +135,20 @@ a.btn.btn-default.btn-teplok:focus{
 	font-weight: 700;
 	letter-spacing: -1px;
 }
-#header-landing #logo h1 a{
+#logo h1 a{
 	color: #fff;
 	-webkit-transition:All 0.4s ease;
 	-moz-transition:All 0.4s ease;
 	-o-transition:All 0.4s ease;
 }
-#header-landing #logo h1 a:hover,
-#header-landing #logo h1 a:focus{
+#logo h1 a:hover,
+#logo h1 a:focus{
 	color: #fff;
 	text-decoration: none;
 }
-#header-landing #logo h1 i{color: #1CB1D0;}
-#header-landing #nav-menu{
+#logo h1 i{color: #1CB1D0;}
+
+#nav-menu{
 	padding: 0;
 	background: #272727;
 	z-index: 20;
@@ -158,18 +159,18 @@ a.btn.btn-default.btn-teplok:focus{
 	right: 0;
 	width: 100%;
 }
-#header-landing #nav-menu .menus{
+#nav-menu .menus{
 	float: right;
 	font-size: 14px;
 	padding: 5px 0;
 }
-#header-landing #nav-menu .menus ul{
+#nav-menu .menus ul{
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
-#header-landing #nav-menu .menus ul li{display: inline-block;}
-#header-landing #nav-menu .menus ul li a{
+#nav-menu .menus ul li{display: inline-block;}
+#nav-menu .menus ul li a{
 	color: #fff;
 	padding: 15px 15px;
 	border-radius: 5px;
@@ -178,23 +179,25 @@ a.btn.btn-default.btn-teplok:focus{
 	-moz-transition:All 0.4s ease;
 	-o-transition:All 0.4s ease;
 }
-#header-landing #nav-menu .menus ul li a:hover,
-#header-landing #nav-menu .menus ul li a:focus{
+#nav-menu .menus ul li a:hover,
+#nav-menu .menus ul li a:focus{
 	color: #1CB1D0;
 	background: #1C1C1C;
 }
-#header-landing #nav-menu .menus ul li.active a,
-#header-landing #nav-menu .menus ul li.active a:hover,
-#header-landing #nav-menu .menus ul li.active a:focus{
+#nav-menu .menus ul li.active a,
+#nav-menu .menus ul li.active a:hover,
+#nav-menu .menus ul li.active a:focus{
 	color: #1CB1D0;
 	background: #1C1C1C;
 }
-#header-landing #nav-menu .menus ul li a i{display: none;}
-#header-landing .awesome-slogan{
+#nav-menu .menus ul li a i{display: none;}
+.banner .awesome-slogan{
 	text-align:center;
 	padding-top: 10%;
+
+	padding-bottom: 8%;
 }
-#header-landing .awesome-slogan h2{
+.banner .awesome-slogan h2{
 	padding: 15px 20px;
 	color: #fff;
 	font-weight: 300;
@@ -204,7 +207,7 @@ a.btn.btn-default.btn-teplok:focus{
 	display: block;
 	text-transform: uppercase;
 }
-#header-landing .awesome-slogan h4{
+.banner .awesome-slogan h4{
 	padding: 10px 20px;
 	color: #fff;
 	font-weight: 300;
@@ -212,22 +215,22 @@ a.btn.btn-default.btn-teplok:focus{
 	line-height: 100%;
 	display: block;
 }
-#header-landing .awesome-slogan h2 span,
-#header-landing .awesome-slogan h4 span{
+.banner .awesome-slogan h2 span,
+.banner .awesome-slogan h4 span{
 	font-weight: 800;
 }
-#header-landing .awesome-slogan p{
+.banner .awesome-slogan p{
 	font-size: 18px;
 	margin: 20px 0;
 	color: #fff;
 	padding: 5px 10px;
 	display: block;
 }
-#header-landing .awesome-slogan .social-icons{
+.banner .awesome-slogan .social-icons{
 	padding: 20px;
 	display: block;
 }
-#header-landing .awesome-slogan .social-icons img{
+.banner .awesome-slogan .social-icons img{
 	width: 35px;
 	margin: 2px;
 }
@@ -300,7 +303,7 @@ a.btn.btn-default.btn-teplok:focus{
 .the-box-landing{
 	background: #fff;
 	padding: 15px;
-	margin: 30px 0;
+	/*margin: 30px 0;*/
 	-webkit-transition:All 0.4s ease;
 	-moz-transition:All 0.4s ease;
 	-o-transition:All 0.4s ease;
@@ -315,11 +318,11 @@ a.btn.btn-default.btn-teplok:focus{
 .the-box-landing.border-color-right{border-right: 3px solid #1CB1D0;}
 .the-box-landing.full{padding: 0px;}
 .the-box-landing h3{
-	font-weight: 300;
+	/*font-weight: 300;*/
 	margin: 0;
 	padding: 0;
 }
-.the-box-landing h4{font-weight: 300;}
+/*.the-box-landing h4{font-weight: 300;}*/
 .the-box-landing p{font-size: 15px;}
 .the-box-landing img.small-icon{
 	margin: 25px 0;
@@ -398,7 +401,7 @@ a.btn.btn-default.btn-teplok:focus{
 }
 .carousel-landing.carousel.carousel-testimonial .testimonial-inner{
 	padding: 20px 20px 35px;
-	margin: 0 0 70px 0;
+	/*margin: 0 0 70px 0;*/
 	color: #fff;
 	position: relative;
 }

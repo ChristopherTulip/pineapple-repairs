@@ -1,0 +1,15 @@
+::-webkit-input-placeholder {
+  color: #909090;
+  position: relative;
+  -webkit-transform: translate(0, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+::-webkit-input-placeholder[style*=hidden] {
+  color: $brand-color;
+  font-weight: 700;
+  font-size: 0.6em;
+  -webkit-transform: translate(0, -1.2em);
+  opacity: 1;
+  visibility: visible !important;
+}

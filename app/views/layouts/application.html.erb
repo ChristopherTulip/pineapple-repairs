@@ -21,8 +21,13 @@
   </head>
 
 
+
   <!-- BODY WITH DATA STYPE FOR SCROLLSPY -->
   <body class="tooltips" id="top" data-spy="scroll" data-target="#myScrollspy">
+
+    <header id="header-landing">
+      <%= render "shared/menu" %>
+    </header>
 
     <%= yield %>
 

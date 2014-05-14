@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem "font-awesome-rails"
 
+gem 'devise'
+
 group :development do
   gem 'haml-rails'
   gem 'jbuilder', '~> 1.2'
@@ -23,6 +25,10 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'
+end
+
+group :production do
+	gem 'pg'
 end
 
 group :doc do

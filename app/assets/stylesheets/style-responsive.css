@@ -55,14 +55,14 @@
 		display: block;
 		text-align: center;
 	}
-	#header-landing #nav-menu .menus{
+	#nav-menu .menus{
 		float: none;
 		font-size: 14px;
 		padding: 5px 0;
 		text-align: center;
 	}
-	#header-landing #nav-menu .menus ul li a span{display: none;}
-	#header-landing #nav-menu .menus ul li a i{display: inline-block;}
+	#nav-menu .menus ul li a span{display: none;}
+	#nav-menu .menus ul li a i{display: inline-block;}
 	#header-landing .awesome-slogan{
 		text-align:center;
 		padding-top: 17%;
@@ -156,7 +156,7 @@
 }
 
 @media (max-width: 480px){
-	#header-landing #nav-menu .menus ul li a{padding: 10px 10px;}
+	#nav-menu .menus ul li a{padding: 10px 10px;}
 	#header-landing .awesome-slogan{
 		text-align:center;
 		padding-top: 25%;

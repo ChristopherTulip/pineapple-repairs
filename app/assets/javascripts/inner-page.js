@@ -8,10 +8,10 @@ $(document).ready(function() {
 	})
 
 	/** SMOOTH SCROLL SELECTOR **/
-	$('ul.scroll-nav a').smoothScroll({
-		easing: 'swing',
-		speed: 500
-	});
+	// $('ul.scroll-nav a').smoothScroll({
+	// 	easing: 'swing',
+	// 	speed: 500
+	// });
 	$('#back-top a').smoothScroll({
 		easing: 'swing',
 		speed: 500

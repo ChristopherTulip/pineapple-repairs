@@ -1,15 +1,25 @@
 <!-- SECTION SERVICES -->
-<div class="section-page-landing section-grey" id="search">
+<div class="section-page-landing section-grey" id="repairs">
   <div class="inner-section">
     <div class="container">
       <h2 class="text-center">What's Broken?</h2>
-      <%= form_for Job.new do |f| %>
-        <% @devices.each do |device| %>
-          <div class="col-sm-2 text-center">
-            <%= f.button :submit, name: "device_id", value: device.id %>
-          </div>
+
+      <p class="text-center">
+      	Choose the device you need fixed, and then the repair you need, and we'll have a technician go directly to you to fix it.
+      </p>
+
+      <div class="row devices">
+        <%= form_for Job.new do |f| %>
+          <% @devices.each do |device| %>
+            <div class="col-sm-4 device">
+              <%= f.button :submit, name: "device_id", value: device.id do %>
+                <%= image_tag "#{device.name.downcase}.png" %>
+                <h3><%= device.name %></h3>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

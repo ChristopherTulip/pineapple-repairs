@@ -1,0 +1,50 @@
+#banner {
+	button {
+		//background-color: $brand-col
+		position: relative;
+		padding-left: 40px;
+		padding-right: 50px;
+		letter-spacing: .2px;
+
+		span {
+			font-size: .8em;
+			right: 17px;
+			top: 15px;
+		}
+	}
+
+
+}
+
+.banner {
+	position: relative;
+
+	.shade {
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background-color: rgba(0,0,0,.2);
+	}
+
+	&.homepage {
+		background-image: image-url('dock_background.jpg');
+		background-size: cover;
+		background-position: center center;	
+	}
+	
+	.awesome-slogan {
+		position: relative;
+		z-index: 2;
+		h2, h4 {
+			span {
+				color: $brand-color;
+			}
+		}
+		h2 {
+			font-weight: 700;
+			letter-spacing: .5px;
+			span {
+
+			}
+		}
+	}
+}
