@@ -31,6 +31,8 @@ class Job < ActiveRecord::Base
       Model.where(device_id: id)
     elsif step?(2)
       Problem.all
+    else
+      nil
     end
   end
 

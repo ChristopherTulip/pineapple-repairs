@@ -1,7 +1,7 @@
-<%= form_for Job.new do |f| %>
-  <% @data.each do |device| %>
-    <div class="col-sm-2 text-center">
-      <%= f.button device.name, name: "device_id", value: device.id %>
-    </div>
-  <% end %>
+<%= f.label :device %>
+
+<% @data.each do |device| %>
+  <div class="col-sm-2 text-center">
+    <%= f.button device.name, name: "device_id", value: device.id %>
+  </div>
 <% end %>

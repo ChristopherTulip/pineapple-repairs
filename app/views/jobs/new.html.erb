@@ -1,6 +1,10 @@
 <%= form_for Job.new do |f| %>
   <%= render "/jobs/#{@job.current_step}_step", f: f, job: @job %>
-  <%= f.button :back, name: "back", value: "true" %>
+
+  <% unless @job.first_step? %>
+    <%= f.button :back, name: "back", value: "true" %>
+  <% end %>
+
 <% end %>
 
 

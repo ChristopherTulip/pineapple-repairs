@@ -13,7 +13,7 @@ $(function() {
 			{ src:'assets/dock_background.jpg', fade:1000, delay: 9000 }
 	  ]
 	})('overlay', {
-	  src:'assets/third/vegas/overlays/02.png'
+	  src:'assets/overlays/02.png'
 	});
 });
 

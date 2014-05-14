@@ -12,25 +12,13 @@ class JobsController < ApplicationController
   end
 
   def create
-    if cookies[:job].present?
-      @job = Job.new( YAML::load( cookies[:job] ) )
-    else
-      @job = Job.new
-    end
+    @job = create_job_from_cookie
 
-    @data = @job.data_for_step @job.device_id
-
-    if @job.step?(0)
-      @job.device_id = params[:device_id]
-    elsif @job.step?(1)
-      @job.model_id = params[:model_id]
-    elsif @job.step?(2)
-      @job.problem_id = params[:problem_id]
-    elsif @job.step?(3)
-
-    end
+    assign_params @job
 
     @job.next_state params[:back]
+
+    @data = @job.data_for_step @job.device_id
 
     if @job.current_step.nil?
       cookies.delete(:job)
@@ -40,4 +28,23 @@ class JobsController < ApplicationController
       render :new
     end
   end
+
+private
+
+  def create_job_from_cookie
+    cookies[:job].present? ? Job.new( YAML::load( cookies[:job] ) ) : Job.new
+  end
+
+  def assign_params job
+    if job.step?(0)
+      job.device_id = params[:device_id]
+    elsif job.step?(1)
+      job.model_id = params[:model_id]
+    elsif job.step?(2)
+      job.problem_id = params[:problem_id]
+    elsif job.step?(3)
+
+    end
+  end
+
 end
