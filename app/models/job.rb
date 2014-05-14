@@ -21,7 +21,7 @@ class Job < ActiveRecord::Base
   validates :phone_number, length: {in: 1..100 }, numericality: true, presence: true, if: fourth_step
 
   def steps
-    %w[ device model problem contact ]
+    %w[ device  model problem location contact ]
   end
 
   def data_for_step id=nil

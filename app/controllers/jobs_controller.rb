@@ -32,6 +32,10 @@ class JobsController < ApplicationController
 private
 
   def create_job_from_cookie
+    if params[:restart]
+      cookies.delete(:job)
+    end
+
     cookies[:job].present? ? Job.new( YAML::load( cookies[:job] ) ) : Job.new
   end
 

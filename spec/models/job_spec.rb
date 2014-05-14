@@ -7,7 +7,7 @@ describe Job do
 
   describe "steps" do
     it "should return a list of steps" do
-      expect(job.steps).to eq(%w[ device location model problem contact])
+      expect(job.steps).to eq(%w[ device model problem location contact])
     end
   end
 

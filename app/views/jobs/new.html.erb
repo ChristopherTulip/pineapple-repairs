@@ -1,8 +1,17 @@
+<% @job.steps.each_with_index do |step, i| %>
+  <% if step == @job.current_step %>
+    <h3> <%= "#{i+1}. #{step}" %> </h3>
+  <% else %>
+    <h4> <%= "#{i+1}. #{step}" %> </h4>
+  <% end %>
+<% end %>
+
 <%= form_for Job.new do |f| %>
   <%= render "/jobs/#{@job.current_step}_step", f: f, job: @job %>
 
   <% unless @job.first_step? %>
     <%= f.button :back, name: "back", value: "true" %>
+    <%= f.button :restart, name: "restart", value: "true" %>
   <% end %>
 
 <% end %>
