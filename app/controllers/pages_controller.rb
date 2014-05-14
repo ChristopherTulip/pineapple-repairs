@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def landing
+  def index
   end
 
   def about

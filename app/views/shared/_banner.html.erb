@@ -2,7 +2,7 @@
 <div class="shade">
 
 </div>
-<div class="awesome-slogan">
+<div id="banner" class="awesome-slogan">
   <h2>
     We Can <span>Fix</span> That!
   </h2>
@@ -11,11 +11,12 @@
   </h4>
 
 
-  <a href="#features">
+  <%= link_to root_path(anchor: "repairs") do %>
     <button class="btn btn-primary">
       Pineapple's Repairs
+      <span class="icon-arw-down">&#10148;</span>
     </button>
-  </a>
+  <% end %>
 
 
 
