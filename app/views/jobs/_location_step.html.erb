@@ -1,6 +1,3 @@
-<%= f.label :model %>
-<% @data.each do |device| %>
-  <div class="col-sm-2 text-center">
-    <%= f.button device.name, name: "model_id", value: device.id %>
-  </div>
-<% end %>
+<%= f.label :location %>
+<%= f.text_field :location %>
+<%= f.submit ">" %>

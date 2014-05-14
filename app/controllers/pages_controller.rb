@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def about
   end
 
-  def contact
+  def products
   end
 
 end

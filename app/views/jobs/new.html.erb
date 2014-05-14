@@ -1,19 +1,72 @@
-<% @job.steps.each_with_index do |step, i| %>
-  <% if step == @job.current_step %>
-    <h3> <%= "#{i+1}. #{step}" %> </h3>
-  <% else %>
-    <h4> <%= "#{i+1}. #{step}" %> </h4>
-  <% end %>
-<% end %>
-
-<%= form_for Job.new do |f| %>
-  <%= render "/jobs/#{@job.current_step}_step", f: f, job: @job %>
-
-  <% unless @job.first_step? %>
-    <%= f.button :back, name: "back", value: "true" %>
-    <%= f.button :restart, name: "restart", value: "true" %>
-  <% end %>
-
-<% end %>
 
 
+<div class="section-page-landing section-grey">
+  <div class="inner-section">
+    <div class="container">
+      <% @job.steps.each_with_index do |step, i| %>
+        <% if step == @job.current_step %>
+          <div class="col-sm-2">
+            <h4>
+              <span>
+                <%= "#{i+1}. #{step}" %>
+                <i class="fa fa-caret-right"></i>
+              </span>
+            </h4>
+          </div>
+        <% else %>
+          <div class="col-sm-2">
+            <h4>
+              <%= "#{i+1}. #{step}" %>
+              <i class="fa fa-caret-right"></i>
+            </h4>
+          </div>
+        <% end %>
+      <% end %>
+
+      <%= form_for Job.new do |f| %>
+        <%= render "/jobs/#{@job.current_step}_step", f: f, job: @job %>
+
+        <% unless @job.first_step? %>
+          <div><%= f.button :back, name: "back", value: "true" %></div>
+          <div><%= f.button :restart, name: "restart", value: "true" %></div>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="section-page-landing" id="search">
+  <div class="inner-section">
+    <div class="container">
+      <h2 class="text-center">More Options?</h2>
+
+      <h4 class="text-center">
+        If you're not in one of our service areas we also have the following options to fix up your device!
+      </h4>
+
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h3>DIY Kits</h3>
+
+          <h4>
+            If you're tech savy and want to try your hand at fixing your own phone check out our selection of kits!
+          </h4>
+
+          <%= link_to "Browse kits now!", products_path %>
+
+        </div>
+
+        <div class="col-md-6 text-center">
+          <h3>Mail In Repair</h3>
+
+          <h4>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+          </h4>
+
+          <%= link_to "See our mail in promise!", products_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

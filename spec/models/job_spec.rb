@@ -7,7 +7,7 @@ describe Job do
 
   describe "steps" do
     it "should return a list of steps" do
-      expect(job.steps).to eq(%w[ device model problem location contact])
+      expect(job.steps).to eq(%w[ device model network problem location contact])
     end
   end
 
@@ -41,12 +41,12 @@ describe Job do
       expect(job.data_for_step(1)).to eq([problem1, problem2, problem3])
     end
 
-    it "should return nil on the fourth step" do
+    it "should return an empty array on the fourth step" do
       3.times do
         job.next_step
       end
 
-      expect(job.data_for_step(1)).to eq(nil)
+      expect(job.data_for_step(1)).to eq([])
     end
   end
 end

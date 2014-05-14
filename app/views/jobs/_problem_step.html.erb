@@ -1,8 +1,6 @@
-<%= f.label :problem %>
-
 <% @data.each do |problem| %>
   <div class="col-sm-2 text-center">
-    <%= f.button problem.name, name: "problem_id", value: problem.id %>
+    <%= f.button problem.name, name: "problem_id", value: problem.id, class: "btn btn-default" %>
   </div>
 <% end %>
 
