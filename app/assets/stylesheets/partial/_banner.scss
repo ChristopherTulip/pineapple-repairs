@@ -1,6 +1,7 @@
+
 #banner {
+	min-height: 700px;
 	button {
-		//background-color: $brand-col
 		position: relative;
 		padding-left: 40px;
 		padding-right: 50px;
@@ -26,14 +27,17 @@
 	}
 
 	&.homepage {
-		background-image: image-url('dock_background.jpg');
+		background-image: image-url('banner.jpg');
 		background-size: cover;
 		background-position: center center;	
+		background-attachment: fixed;
 	}
 	
 	.awesome-slogan {
 		position: relative;
+		padding-top: 15%;
 		z-index: 2;
+
 		h2, h4 {
 			span {
 				color: $brand-color;

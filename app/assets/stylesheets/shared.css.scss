@@ -51,6 +51,12 @@
 }
 
 
+.section-white {
+	background-color: #fff;
+	a {
+		color: #222;
+	}
+}
 
 .section-grey {
 	p {
@@ -62,13 +68,13 @@
 	p, h2 {
 		color: #000;
 	}
+
 	background-color: transparent;
-	//text-shadow: 1px 1px rgba(0,0,0,.2);
 }
 
 .wrapper {
-	margin-top: 64px;
-	background-image: image-url('dock_background.jpg');
+	//margin-top: 64px;
+	background-image: image-url('banner.jpg');
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
@@ -76,15 +82,13 @@
 }
 
 .devices {
-	
-
 	a {
+		cursor: pointer;
 		-webkit-transition: all 100ms ease;
 	-moz-transition: all 100ms ease;
 	-ms-transition: all 100ms ease;
 	transition: all 100ms ease;
 		display: inline-block;
-		color: #fff;
 		&:hover {
 			text-decoration: none;
 			-webkit-transform: scale(1.2);	
@@ -94,10 +98,12 @@
 
 	.device {
 		text-align: center;
+
 		
 	}
 	img {
 		height: 200px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -135,4 +141,131 @@
 	-moz-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
+}
+
+/* About Us Page Styling */
+
+#Wrapper {
+	padding-top: 80px;
+	color: #5e5e5e;
+	background-image: image-url('about_background.jpg');
+}
+.aboutUs {
+	width:1274px;
+	height:5008px;
+	margin:4px auto 0;
+	background: image-url('aboutBack.png') no-repeat 0px 56px;
+}
+.PageHeader {
+	margin-top: 0;
+	font-weight: 700;
+	font-family: Arial;
+	font-size: 100px;
+}
+.aboutUs #aboutInner {
+	position: relative;
+	width: 1080px;
+}
+
+.aboutUs .feelsGood,
+.aboutUs .qualityConvenience,
+.aboutUs .mealsDonated,
+.aboutUs .giveBack,
+.aboutUs .lookingForward,
+.aboutUs .findSpace {
+	position: absolute;
+}
+.aboutUs div p {
+	text-align: justify;
+	margin-top: 10px;
+	font-size: 17px;
+	line-height: 26px;
+	font-weight: 300;
+}
+.aboutUs h2 {
+	font-weight: 300 !important;
+	letter-spacing: 4px;
+	font-size: 38px;
+	margin-top: 0;
+	font-family: Helvetica;
+}
+.aboutUs p.indented {
+	text-indent: 37px;
+}
+.aboutUs .sec1Left {
+	width: 448px;
+	margin: 0px 0px 0px 0px;
+}
+.aboutUs .withinBars {
+	width: 1058px;
+	margin-top: 0px;
+}
+.aboutUs .findSpace {
+	top: 682px;
+	right: 0px;
+	width: 554px;
+}
+.aboutUs .findSpace h2 {
+	margin-bottom: 11px;
+}
+.aboutUs .feelsGood {
+	top: 1330px;
+	left: 0px;
+	width: 520px;
+}
+.aboutUs .feelsGood h2 {
+	margin-bottom: 30px;
+}
+.aboutUs .qualityConvenience {
+	top: 2088px;
+	left: 10px;
+	width: 427px;
+}
+.aboutUs .qualityConvenience h2 {
+	margin-bottom: 9px;
+    line-height: 41px;
+}
+.aboutUs .qualityConvenience h2,
+.aboutUs .mealsDonated h2 {
+	letter-spacing: 1px;
+    font-size: 48px;
+}
+.aboutUs .mealsDonated h2 {
+	margin-bottom: 2px;
+	font-size: 43px;
+}
+.aboutUs .qualityConvenience p, 
+.aboutUs .mealsDonated p {
+	line-height: 18px;
+}
+.aboutUs .qualityConvenience p {
+	padding-left: 5px;
+}
+.aboutUs .mealsDonated {
+    top: 2635px;
+    left: 20px;
+	width: 400px;
+}
+.aboutUs .giveBack {
+    top: 3216px;
+    right: 19px;
+    width: 306px;
+}
+.aboutUs .giveBack h2 {
+	letter-spacing: 8px;
+}
+.aboutUs .giveBack p {
+	line-height: 26px;
+}
+.aboutUs .lookingForward {
+    top: 3865px;
+    width: 357px;
+    left: 213px;
+}
+.aboutUs .lookingForward h2 {
+	margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+.aboutUs .lookingForward p {
+    padding-right: 9px;
 }

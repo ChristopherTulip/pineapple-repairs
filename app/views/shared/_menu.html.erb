@@ -3,61 +3,66 @@
 
   <!-- NAV MENU CONTAINER -->
   <div class="container">
-
-    <!-- LOGO -->
-    <div id="logo">
-      <h1><a href="/"><i class="fa fa-flask"></i> PineappleRepairs.</a></h1>
+    <div class="row">
+      <div class="col-xs-4"
+       <!-- LOGO -->
+      <div id="logo">
+        <h1><a href="/"><i class="fa fa-flask"></i> PineappleRepairs.</a></h1>
+      </div>
+      <!-- END LOGO -->
     </div>
-    <!-- END LOGO -->
-
-    <!-- NAV MENU -->
-    <div class="menus" id="myScrollspy">
-      <ul class="nav scroll-nav">
-        <li class="active">
-          <%= link_to root_path do %>
-            <i class="fa fa-home"></i>
-            <span>Home</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path(anchor: 'repairs') do %>
-            <i class="fa fa-flask"></i>
-            <span>Repairs</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path(anchor: 'features') do %>
-            <i class="fa fa-laptop"></i>
-            <span>Features</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path(anchor: 'services') do %>
-            <i class="fa fa-cog"></i>
-            <span>Services</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path(anchor: 'find-us') do %>
-            <i class="fa fa-flask"></i>
-            <span>Find Us</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path(anchor: 'contact') do %>
-            <i class="fa fa-envelope"></i>
-            <span>Contact</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to about_path do %>
-            <i class="fa fa-coffee"></i>
-            <span>About Us</span>
-          <% end %>
-        </li>
-      </ul>
+    <div class="col-xs-8">
+      <!-- NAV MENU -->
+      <div class="menus" id="myScrollspy">
+        <ul class="nav scroll-nav">
+          <li class="active">
+            <%= link_to root_path do %>
+              <i class="fa fa-home"></i>
+              <span>Home</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path(anchor: 'repairs') do %>
+              <i class="fa fa-flask"></i>
+              <span>Repairs</span>
+            <% end %>
+          </li>
+         <!--  <li>
+            <%= link_to root_path(anchor: 'features') do %>
+              <i class="fa fa-laptop"></i>
+              <span>Features</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path(anchor: 'services') do %>
+              <i class="fa fa-cog"></i>
+              <span>Services</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path(anchor: 'find-us') do %>
+              <i class="fa fa-flask"></i>
+              <span>Find Us</span>
+            <% end %>
+          </li> -->
+          <li>
+            <%= link_to root_path(anchor: 'contact') do %>
+              <i class="fa fa-envelope"></i>
+              <span>Contact</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to about_path do %>
+              <i class="fa fa-coffee"></i>
+              <span>About Us</span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <!-- END NAV MENU -->
     </div>
-    <!-- END NAV MENU -->
+    </div>
+   
   </div>
   <!-- END NAV MENU CONTAINER -->
 
