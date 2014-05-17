@@ -47,6 +47,10 @@
 				&.active {
 					a {
 						background-color: #fff;
+
+						&:hover {
+							background-color: #fff;
+						}
 					}
 				}
 			}
