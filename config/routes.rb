@@ -10,7 +10,7 @@ PineappleRepairs::Application.routes.draw do
   devise_for :contractors
   resources :jobs do
     collection do
-      get :unavailable, to: "jobs#unavailable"
+      get :unavailable, to: "pages#unavailable"
     end
   end
 

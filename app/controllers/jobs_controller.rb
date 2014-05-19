@@ -16,6 +16,7 @@ class JobsController < ApplicationController
 
     assign_params @job
 
+    # binding.pry
     @job.next_state params[:back]
 
     @data = @job.data_for_step @job.device_id
@@ -23,7 +24,8 @@ class JobsController < ApplicationController
     if @job.current_step.nil?
       cookies.delete(:job)
       redirect_to root_path, notice: "Job Successfully Created - Our technicians will be in touch soon"
-    elsif @job.current_step == "location" && @job.location.nil?
+    elsif @job.current_step == "location" && @job.location.nil? && params[:job].present?
+      cookies.delete(:job)
       redirect_to unavailable_jobs_path
     else
       cookies[:job] = YAML::dump @job.attributes.merge( "current_step" => @job.current_step )
@@ -45,24 +47,33 @@ private
   end
 
   def assign_params job
-    if job.step?(0)
+    case job.current_step
+    when "device"
       job.device_id = params[:device_id]
-    elsif job.step?(1)
+    when "model"
       job.model_id = params[:model_id]
-    elsif job.step?(2)
+    when "network"
       job.network_id = params[:network_id]
-    elsif job.step?(3)
+    when "problem"
       job.problem_id = params[:problem_id]
-    elsif job.step?(4)
-      location = Location.where(city: params[:job][:location][:city])
+    when "location"
+      if params[:job] && params[:job][:location].present?
+        location = Location.where( city: params[:job][:location][:city].downcase )
 
-      if ( params[:job][:location][:city].present? )
-        location.where( city: params[:job][:location][:city] )
+        if ( params[:job][:location][:country].present? )
+          location.where( country: params[:job][:location][:country].downcase )
+        end
+
+        job.location = location.first
       end
-
-      job.location = location.first
-
+    when "contact"
+      if params[:job]
+        job.name = params[:job][:name]
+        job.email = params[:job][:email]
+        job.phone_number = params[:job][:phone_number]
+      end
+    else
+      raise "should never end up here"
     end
   end
-
 end

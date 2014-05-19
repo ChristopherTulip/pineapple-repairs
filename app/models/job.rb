@@ -12,6 +12,7 @@ class Job < ActiveRecord::Base
   third_step  = lambda { |r| r.current_step == r.steps[2] }
   fourth_step = lambda { |r| r.current_step == r.steps[3] }
   fifth_step  = lambda { |r| r.current_step == r.steps[4] }
+  sixth_step  = lambda { |r| r.current_step == r.steps[5] }
 
   # first step validation
   validates :device_id, presence: true, if: first_step
@@ -25,10 +26,13 @@ class Job < ActiveRecord::Base
   # fourth step validation
   validates :problem_id, presence: true, if: fourth_step
 
+  # fourth step validation
+  validates :location_id, presence: true, if: fifth_step
+
   # fifth step validations
-  validates :name, length: {in: 1..100 },  presence: true, if: fifth_step
-  validates :email, length: {in: 1..100 },  presence: true, if: fifth_step
-  validates :phone_number, length: {in: 1..100 }, numericality: true, presence: true, if: fifth_step
+  validates :name, length: {in: 1..40 },  presence: true, if: sixth_step
+  validates :email, length: {in: 1..100 },  presence: true, if: sixth_step
+  validates :phone_number, length: {in: 10..12 }, numericality: true, presence: true, if: sixth_step
 
   def steps
     %w[ device model network problem location contact ]

@@ -10,15 +10,13 @@ Device.create(name: "Phone")
 Device.create(name: "iPod")
 Device.create(name: "iPad")
 
-
-@phone     = Device.where(name: "Phone").first
+@phone      = Device.where(name: "Phone").first
 @ipod       = Device.where(name: "iPod").first
 @ipad       = Device.where(name: "iPad").first
 
-puts "iPhone: #{@iphone.id}"
+puts "iPhone: #{@phone.id}"
 puts "iPod: #{@ipod.id}"
 puts "iPad: #{@ipad.id}"
-puts "Android: #{@android.id}"
 
 # Phone Models
 Model.create(name: "iPhone 3g", price: 39, time: 15, device: @phone )
@@ -43,10 +41,10 @@ Model.create(name: "iPad Mini", price: 149, time: 1440, device: @ipad )
 Model.create(name: "iPad Mini Retina", price: 199, time: 1440, device: @ipad )
 
 # iPod Models
-Model.create(name: "2th Generation iPod", cost: 49, time: 60, device: @ipod )
-Model.create(name: "3rd Generation iPod", cost: 49, time: 60, device: @ipod )
-Model.create(name: "4th Generation iPod", cost: 59, time: 60, device: @ipod )
-Model.create(name: "5th Generation iPod", cost: 149, time: 60, device: @ipod )
+Model.create(name: "2th Generation iPod", price: 49, time: 60, device: @ipod )
+Model.create(name: "3rd Generation iPod", price: 49, time: 60, device: @ipod )
+Model.create(name: "4th Generation iPod", price: 59, time: 60, device: @ipod )
+Model.create(name: "5th Generation iPod", price: 149, time: 60, device: @ipod )
 
 Problem.create(name: "Broken Screen")
 Problem.create(name: "Other")
@@ -55,3 +53,5 @@ Problem.create(name: "Not Turning On")
 Network.create(name: "AT&T")
 Network.create(name: "Koodo")
 Network.create(name: "Telus")
+
+Location.create(city: "vancouver", country: "cananda")
