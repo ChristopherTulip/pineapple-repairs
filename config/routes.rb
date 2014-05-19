@@ -8,7 +8,11 @@ PineappleRepairs::Application.routes.draw do
   end
 
   devise_for :contractors
-  resources :jobs
+  resources :jobs do
+    collection do
+      get :unavailable, to: "jobs#unavailable"
+    end
+  end
 
   get "/about",    to: "pages#about"
   get "/products",  to: "pages#products"

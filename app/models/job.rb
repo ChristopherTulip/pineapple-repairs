@@ -1,6 +1,12 @@
 class Job < ActiveRecord::Base
   include Wizard
 
+  belongs_to :device
+  belongs_to :model
+  belongs_to :problem
+  belongs_to :network
+  belongs_to :location
+
   first_step  = lambda { |r| r.current_step == r.steps[0] }
   second_step = lambda { |r| r.current_step == r.steps[1] }
   third_step  = lambda { |r| r.current_step == r.steps[2] }
@@ -14,7 +20,10 @@ class Job < ActiveRecord::Base
   validates :model_id, presence: true, if: second_step
 
   # third step validation
-  validates :problem_id, presence: true, if: third_step
+  validates :network_id, presence: true, if: third_step
+
+  # fourth step validation
+  validates :problem_id, presence: true, if: fourth_step
 
   # fifth step validations
   validates :name, length: {in: 1..100 },  presence: true, if: fifth_step
@@ -31,6 +40,8 @@ class Job < ActiveRecord::Base
     elsif step?(1)
       Model.where(device_id: id)
     elsif step?(2)
+      Network.all
+    elsif step?(3)
       Problem.all
     else
       []

@@ -1,3 +1,8 @@
-<%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.submit ">" %>
+<%= text_field_tag "autocomplete" %>
+
+<%= f.fields_for :location do |location| %>
+  <%= location.hidden_field :city %>
+  <%= location.hidden_field :country %>
+<% end %>
+
+<%= f.submit "submit" %>

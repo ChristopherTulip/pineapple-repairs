@@ -13,3 +13,4 @@
 //= require inner-page
 //= require index-page
 //= require shared
+//= require places-autocomplete
