@@ -1,0 +1,5 @@
+<% @data.each do |device| %>
+  <div class="col-sm-2 text-center">
+    <%= f.button device.name, name: "device_id", value: device.id, class: "btn btn-default" %>
+  </div>
+<% end %>

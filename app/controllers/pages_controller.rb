@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
 
-  def landing
+  def index
+    @devices = Device.all
   end
 
   def about
   end
 
-  def contact
+  def products
   end
 
 end

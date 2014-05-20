@@ -3,33 +3,23 @@
   <div class="inner-section">
     <div class="container">
       <h2 class="text-center">What's Broken?</h2>
+
       <p class="text-center">
       	Choose the device you need fixed, and then the repair you need, and we'll have a technician go directly to you to fix it.
       </p>
 
       <div class="row devices">
-      	<div class="col-sm-4 device">
-      		<%= link_to "#iPhone" do %>
-	      		<%= image_tag "iphone.png" %>
-	      		<h3>iPhone</h3>
-	      	<% end %>
-      	</div>
-
-      	<div class="col-sm-4 device">
-      		<%= link_to "#iPad" do %>
-	      		<%= image_tag "ipad.png" %>
-	      		<h3>Tablet</h3>
-	      	<% end %>
-      	</div>
-
-      	<div class="col-sm-4 device">
-      		<%= link_to "#android" do %>
-	      		<%= image_tag "android.png" %>
-	      		<h3>Android</h3>
-	      	<% end %>
-      	</div>
+        <%= form_for Job.new do |f| %>
+          <% @devices.each do |device| %>
+            <div class="col-sm-4 device">
+              <%= f.button :submit, name: "device_id", value: device.id do %>
+                <%= image_tag "#{device.name.downcase}.png" %>
+                <h3><%= device.name %></h3>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-
     </div>
   </div>
 </div>

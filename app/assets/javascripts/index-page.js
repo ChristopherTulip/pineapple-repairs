@@ -7,6 +7,7 @@ $(function(){
 
 
 /** VEGAS SLIDEHSOW **/
+
 // $(function() {
 // 	$.vegas('slideshow', {
 // 	  backgrounds:[

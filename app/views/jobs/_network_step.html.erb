@@ -1,0 +1,5 @@
+<% @data.each do |network| %>
+  <div class="col-sm-2 text-center">
+    <%= f.button network.name, name: "network_id", value: network.id, class: "btn btn-default" %>
+  </div>
+<% end %>

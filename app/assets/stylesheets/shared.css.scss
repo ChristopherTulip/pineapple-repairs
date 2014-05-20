@@ -23,6 +23,12 @@
 	}
 }
 
+input, button {
+	outline: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
 .about {
 	p {
 		text-align: justify;
@@ -142,17 +148,27 @@
 }
 
 .devices {
-	a {
-		cursor: pointer;
+// <<<<<<< HEAD
+// 	a {
+// 		cursor: pointer;
+// =======
+
+
+	button {
+//>>>>>>> e645890bec5506f6703995cef68e406b03a831f8
 		-webkit-transition: all 100ms ease;
 		-moz-transition: all 100ms ease;
 		-ms-transition: all 100ms ease;
 		transition: all 100ms ease;
 		display: inline-block;
+		
+		background-color: transparent;
+		color: #fff;
+		border: none;
 
 		&:hover {
 			text-decoration: none;
-			-webkit-transform: scale(1.2);	
+			-webkit-transform: scale(1.2);
 			color: $brand-color;
 		}
 	}
@@ -160,7 +176,7 @@
 	.device {
 		text-align: center;
 
-		
+
 	}
 	img {
 		height: 200px;
