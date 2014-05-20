@@ -1,0 +1,61 @@
+#header-landing {
+}
+
+#nav-menu {
+	position: absolute;
+	background-color: rgba(0,0,0,.1);
+	height: 65px;
+	padding: 0;
+	line-height: 65px;
+
+	#logo {
+		position: static;
+		padding: 0;
+		height: 100%;
+		a {
+			line-height: 65px;
+		}
+	}
+
+	.menus {
+		padding: 0;
+		//margin-top: -11px;
+
+		ul {
+			li {
+
+				a {
+					color: #222;
+					font-weight: 700;
+					letter-spacing: .2px;
+					line-height: 65px;
+
+					height: 65px;
+					line-height: 65px;
+					border-radius: 0 !important;
+					padding-top: 0 !important;
+					padding-bottom: 0 !important;
+					padding: 0 25px !important;
+					text-transform: uppercase;
+
+					&:hover {
+						background-color: $brand-color;
+						color: #fff;
+					}
+
+				}
+				&.active {
+					a {
+						background-color: #fff;
+
+						&:hover {
+							background-color: #fff;
+						}
+					}
+				}
+			}
+		}
+
+		
+	}
+}

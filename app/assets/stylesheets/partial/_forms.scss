@@ -1,15 +1,78 @@
 ::-webkit-input-placeholder {
   color: #909090;
   position: relative;
-  -webkit-transform: translate(0, 0);
+  -webkit-transform: translate(0, -.4em);
   transition: all 0.2s ease-in-out;
 }
 
+input:focus::-webkit-input-placeholder,
 ::-webkit-input-placeholder[style*=hidden] {
   color: $brand-color;
   font-weight: 700;
-  font-size: 0.6em;
-  -webkit-transform: translate(0, -1.2em);
+  font-size: 0.65em;
+  -webkit-transform: translate(0, -1.65em);
   opacity: 1;
   visibility: visible !important;
+}
+
+.account {
+ 
+
+  form {
+    max-width: 400px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+    .form-row {
+
+
+      margin: 20px 0;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+
+    .button-row {
+      margin-top: 20px;
+      padding-top: 25px;
+      border-top: thin solid #ddd;
+    }
+
+    .btn {
+      margin: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: .2px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      display: block;
+      
+      border: thin solid #ddd;
+      width: 100%;
+      height: 3em;
+      -webkit-appearance: none;
+      appearance: none;
+      outline: none;
+      //background: rgba(255,255,255,0.97);
+      //font-family: inherit;
+      font-weight: 200;
+      line-height: 1em;
+      font-size: 1em;
+      border-radius: 5px;
+      -webkit-appearance: none;
+      transition: all 0.2s ease-in-out;
+      padding: 1.4em .5em .3em 1em;
+    }
+  }
+}
+
+form {
+
 }

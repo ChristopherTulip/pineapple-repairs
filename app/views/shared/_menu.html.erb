@@ -1,48 +1,54 @@
 <!-- NAV MENU WRAPPER FOR FIXED POSITION -->
 <div id="nav-menu">
-
   <!-- NAV MENU CONTAINER -->
   <div class="container">
+    <div class="row">
 
-    <!-- LOGO -->
-    <div id="logo">
-      <h1><a href="/"><i class="fa fa-flask"></i> PineappleRepairs.</a></h1>
-    </div>
-    <!-- END LOGO -->
+      <div class="col-xs-3">
+        <div id="logo">
+          <h1><a href="/"><i class="fa fa-flask"></i> PineappleRepairs.</a></h1>
+        </div>
+      </div>
 
-    <!-- NAV MENU -->
-    <div class="menus" id="myScrollspy">
-      <ul class="nav scroll-nav">
-        <li class="active">
-          <%= link_to root_path do %>
-            <i class="fa fa-home"></i>
-            <span>Home</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path(anchor: 'repairs') do %>
-            <i class="fa fa-flask"></i>
-            <span>Repairs</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to about_path do %>
-            <i class="fa fa-coffee"></i>
-            <span>About Us</span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to products_path do %>
-            <i class="fa fa-coffee"></i>
-            <span>Products</span>
-          <% end %>
-        </li>
-      </ul>
+      <div class="col-xs-9">
+        <!-- NAV MENU -->
+        <div class="menus" id="myScrollspy">
+          <ul class="nav scroll-nav">
+            <li class="active">
+              <%= link_to root_path do %>
+                <i class="fa fa-home"></i>
+                <span>Home</span>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to root_path(anchor: 'repairs') do %>
+                <i class="fa fa-search"></i>
+                <span>Repairs</span>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to about_path do %>
+                <i class="fa fa-laptop"></i>
+                <span>About Us</span>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to products_path do %>
+                <i class="fa fa-phone"></i>
+                <span>Products</span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
     </div>
-    <!-- END NAV MENU -->
+
   </div>
-  <!-- END NAV MENU CONTAINER -->
 
 </div>
-<!-- END NAV MENU FIXED POSITION -->
 
