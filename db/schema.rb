@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# <<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140512002730) do
 
   create_table "contractors", force: true do |t|
@@ -30,6 +31,9 @@ ActiveRecord::Schema.define(version: 20140512002730) do
 
   add_index "contractors", ["email"], name: "index_contractors_on_email", unique: true
   add_index "contractors", ["reset_password_token"], name: "index_contractors_on_reset_password_token", unique: true
+# =======
+# ActiveRecord::Schema.define(version: 20140509202434) do
+# >>>>>>> 24b1a5fe335f0f642a4d0904fb736d4198b582d0
 
   create_table "devices", force: true do |t|
     t.string   "name"
