@@ -16,12 +16,12 @@ class JobsController < ApplicationController
 
     assign_params @job
 
-    # binding.pry
     @job.next_state params[:back]
 
     @data = @job.data_for_step @job.device_id
 
-    if @job.current_step.nil?
+
+    if !@job.new_record?
       cookies.delete(:job)
       redirect_to root_path, notice: "Job Successfully Created - Our technicians will be in touch soon"
     elsif @job.current_step == "location" && @job.location.nil? && params[:job].present?
