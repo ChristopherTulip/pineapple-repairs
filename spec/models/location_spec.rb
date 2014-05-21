@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Location do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a valid factory" do
+    expect(build(:location)).to be_valid
+  end
 end

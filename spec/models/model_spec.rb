@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a valid factory" do
+    expect(build(:model)).to be_valid
+  end
 end

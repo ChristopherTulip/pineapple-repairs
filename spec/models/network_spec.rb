@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Network do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a valid facotry" do
+    expect(build(:network)).to be_valid
+  end
 end
