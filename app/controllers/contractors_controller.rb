@@ -4,10 +4,8 @@ class ContractorsController < ApplicationController
   end
 
 	def show
-		@jobs_finished = []
-		@jobs_current = Job.where(contractor_id: current_contractor)
-		@jobs_available = Job.where(contractor_id: nil)
+		@jobs_finished = current_contractor.finished_jobs
+		@jobs_current = current_contractor.unfinished_jobs
+		@jobs_available = Job.available
 	end
-
-
 end
