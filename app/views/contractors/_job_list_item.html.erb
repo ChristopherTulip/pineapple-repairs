@@ -1,27 +1,17 @@
-<div class="job-list-item">
-  <ul>
-    <li>City: <%= job_list_item.location.city.capitalize %></li>
-    <li>Country: <%= job_list_item.location.country.capitalize %>
-    </li>
-    <li>Email: <%= job_list_item.email %></li>
+<div class="job-list-item row">
+  <%= link_to job_path(job_list_item) do %>
+    <h3>Model: <%= job_list_item.model.name %></h3>
+  <%end%>
+  <h4>City: <%= job_list_item.location.city.capitalize %></h5>
+  <h4>Problem: <%= job_list_item.problem.name %></h5>
+</div>
 
-    <li>Phone: <%= job_list_item.phone_number %></li>
-    <li>Problem: <%= job_list_item.problem.name %></li>
-    <li>Device: <%= job_list_item.device.name %></li>
-    <li>Model: <%= job_list_item.model.name %></li>
-    <li>Network: <%= job_list_item.network.name %></li>
-    <li>Date Completed: </li>
-    <li>Date Created: <%= job_list_item.created_at %></li>
-
-  </ul>
-
+<div class="job-list-item row">
   <% if job_list_item.contractor.nil? %>
-
     <%= form_tag accept_contractor_job_path(current_contractor, job_list_item), class: 'form validate', html: {role: 'form'} do %>
       <div class="form-group">
         <%= submit_tag 'Take Job', class: 'btn btn-primary inputbtn transition' %>
       </div>
     <% end %>
-
   <% end %>
 </div>

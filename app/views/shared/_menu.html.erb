@@ -3,7 +3,6 @@
   <!-- NAV MENU CONTAINER -->
   <div class="container">
     <div class="row">
-
         <div id="logo">
           <h1>
             <a href="/">
@@ -26,6 +25,12 @@
 
             <li>
               <%= link_to jobs_path do %>
+                <span>Requests</span>
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to products_path do %>
                 <span>Repairs</span>
               <% end %>
             </li>
@@ -33,12 +38,6 @@
             <li>
               <%= link_to about_path do %>
                 <span>About Us</span>
-              <% end %>
-            </li>
-
-            <li>
-              <%= link_to products_path do %>
-                <span>Products</span>
               <% end %>
             </li>
           </ul>

@@ -1,7 +1,10 @@
 <div class="col-md-3 col-sm-4 col-xs-12 model">
-  <%= image_tag "phones/#{model.name.downcase}.png"%>
 
-  <p class="model-name"><%= model.name %></p>
-  <p class="model-price"><%= model.pretty_price.html_safe %></p>
-  <p class="model-time">Ready in <%= model.pretty_time %></p>
+  <%= image_tag "phones/#{model.name.downcase}.png"%>
+  <div class="model-meta">
+	  <p class="model-name"><%= model.name %></p>
+	  <p class="model-price"><%= model.pretty_price.html_safe %></p>
+	  <p class="model-time">Ready in <%= model.pretty_time %></p>
+	</div>
 </div>
+

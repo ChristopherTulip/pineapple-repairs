@@ -13,9 +13,10 @@ PineappleRepairs::Application.routes.draw do
   end
 
   authenticated :contractor do
+    resources :jobs, only: [:index, :show]
 
     resources :contractors do
-      resources :jobs, only: [:index, :show] do
+      resources :jobs, only: [] do
         member do
           post :accept, to: "jobs#accept"
         end

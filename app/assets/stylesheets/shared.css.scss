@@ -265,16 +265,23 @@ footer {
 
 .model {
 	margin-bottom: 40px;
-	padding: 30px;
+
+	.model-meta {
+		background-color: #fff;
+	}
 
 	.model-name {
-		font-weight: 600;
+		padding: 5px 0;
+		font-weight: 500;
 		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: #fff;
+		border-radius: thin solid rgba(0,0,0,.2);
 	}
 
 	.model-price {
 		font-size: 3em;
-		margin: 0px;
+		margin: -15px 0;
 	}
 
 	.model-time {
@@ -421,5 +428,9 @@ footer {
 	}
 
 	.change-steps {
+
+		div[class^="col"] {
+			margin-top: 20px;
+		}
 	}
 }
