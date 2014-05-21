@@ -1,10 +1,20 @@
+.homepage {
+	#banner {
+		min-height: 650px;
+	}
+}
 
 #banner {
-	min-height: 700px;
+	min-height: 300px;
+	background-image: image-url('banner.jpg');
+	background-size: cover;
+	background-position: center center;	
+	
 	button {
 		position: relative;
 		padding-left: 40px;
 		padding-right: 50px;
+		margin: 60px 0;
 		letter-spacing: .2px;
 
 		span {
@@ -13,14 +23,14 @@
 			top: 15px;
 		}
 	}
-
-
 }
 
 .banner {
+	height: 100%;
 	position: relative;
+	border-bottom: thin solid rgba(0,0,0,.2);
 
-	text-shadow: 1px 1px rgba(0,0,0,.2);
+	text-shadow: 1px 1px rgba(0,0,0,.25);
 
 	.shade {
 		position: absolute;
@@ -28,16 +38,10 @@
 		background-color: rgba(0,0,0,.2);
 	}
 
-	&.homepage {
-		background-image: image-url('banner.jpg');
-		background-size: cover;
-		background-position: center center;	
-		//background-attachment: fixed;
-	}
 	
 	.awesome-slogan {
 		position: relative;
-		padding-top: 15%;
+		padding-top: 175px;
 		z-index: 2;
 
 		h2, h4 {
@@ -46,6 +50,7 @@
 			}
 		}
 		h2 {
+			margin-top: 0;
 			font-weight: 700;
 			font-size: 5em;
 			letter-spacing: .5px;

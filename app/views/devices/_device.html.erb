@@ -1,4 +1,12 @@
-<div class="row">
-  <h2><%= device.name %></h2>
-  <%= render device.models %>
+<div class="row product-row">
+	<div class="col-xs-12">
+	<div id="<%= device.name.downcase %>" class="product">
+
+		<header class="product-header">
+	  	<h2 class="device-name"><%= device.name %></h2>
+	  </header>
+	  <div class="row">
+		  <%= render device.models %></div>
+		</div>
+</div>
 </div>

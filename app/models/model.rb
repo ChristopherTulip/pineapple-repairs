@@ -13,6 +13,9 @@ class Model < ActiveRecord::Base
   end
 
   def pretty_price
-    "$#{(price.to_f / 100)}"
+    pretty_price = (price.to_f / 100).to_s
+    cents = pretty_price.to_s[-2, 2]
+    dollars = pretty_price[0, pretty_price.length - 3]
+    "<span class='currency'>$</span>#{dollars}<span class='cents'>#{cents}</span>"
   end
 end

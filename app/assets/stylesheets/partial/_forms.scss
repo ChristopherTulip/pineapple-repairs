@@ -49,9 +49,7 @@ input:focus::-webkit-input-placeholder,
       letter-spacing: .2px;
     }
 
-    input[type="email"],
-    input[type="password"],
-    input[type="text"] {
+    input {
       display: block;
       
       border: thin solid #ddd;

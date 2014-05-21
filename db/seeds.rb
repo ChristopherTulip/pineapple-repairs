@@ -19,13 +19,13 @@ puts "iPod: #{@ipod.id}"
 puts "iPad: #{@ipad.id}"
 
 # Phone Models
-Model.create(name: "iPhone 3g", price: 3999, time: 15, device: @phone )
-Model.create(name: "iPhone 3gs", price: 3999, time: 15, device: @phone )
+Model.create(name: "iPhone 3G", price: 3999, time: 15, device: @phone )
+Model.create(name: "iPhone 3GS", price: 3999, time: 15, device: @phone )
 Model.create(name: "iPhone 4", price: 6999, time: 45, device: @phone )
-Model.create(name: "iPhone 4s", price: 6999, time: 45, device: @phone )
+Model.create(name: "iPhone 4S", price: 6999, time: 45, device: @phone )
 Model.create(name: "iPhone 5", price: 12999, time: 15, device: @phone )
-Model.create(name: "iPhone 5c", price: 17999, time: 15, device: @phone )
-Model.create(name: "iPhone 5s", price: 17999, time: 15, device: @phone )
+Model.create(name: "iPhone 5C", price: 17999, time: 15, device: @phone )
+Model.create(name: "iPhone 5S", price: 17999, time: 15, device: @phone )
 Model.create(name: "Samsung Galaxy S3", price: 14999, time: 60, device: @phone )
 Model.create(name: "Samsung Galaxy S4", price: 17999, time: 60, device: @phone )
 Model.create(name: "Google Nexus 4", price: 17999, time: 60, device: @phone )
@@ -54,4 +54,4 @@ Network.create(name: "AT&T")
 Network.create(name: "Koodo")
 Network.create(name: "Telus")
 
-Location.create(city: "vancouver", country: "cananda")
+Location.create(city: "vancouver", country: "canada")

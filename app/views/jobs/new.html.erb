@@ -1,39 +1,49 @@
-
-<div id="body-content">
+<div class="body-content">
   <div class="section-page-landing section-grey">
     <div class="inner-section">
       <div class="container">
-        <% @job.steps.each_with_index do |step, i| %>
-          <% if step == @job.current_step %>
-            <div class="col-sm-2">
-              <h4>
-                <%= "#{i+1}. #{step}" %>
-                <i class="fa fa-caret-right"></i>
-              </h4>
-            </div>
-          <% else %>
-            <div class="col-sm-2">
-              <h4>
-                <span class="text-primary">
-                  <%= "#{i+1}. #{step}" %>
-                  <i class="fa fa-caret-right"></i>
-                </span>
-              </h4>
-            </div>
-          <% end %>
-        <% end %>
+        <div class="row">
+          <div class="job-progress">
+            <% @job.steps.each_with_index do |step, i| %>
+            <% current_step_index = @job.steps.index(@job.current_step).to_i %>
+              <% if step == @job.current_step %>
+                <div class="col-sm-2">
+                  <h4 class="shown progress-title">
+                    <span class="step-name"><%= "#{i+1}. #{step.upcase}" %></span>
+                    <i class="fa fa-caret-right"></i>
+                  </h4>
+                </div>
+              <% else %>
+                <div class="col-sm-2">
+                  <h4 class="progress-title text-primary <% if i == (current_step_index - 1) || i == (current_step_index + 1) %>shown<% end %>">
+                    <span class="step-name"><%= "#{i+1}. #{step.upcase}" %></span> 
+                    <i class="fa fa-caret-right"></i>
+                  </h4>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
 
-        <%= form_for Job.new do |f| %>
-          <%= render "/jobs/#{@job.current_step}_step", f: f, job: @job %>
+          <div class="job-choices">
+            <%= form_for Job.new do |f| %>
+              <%= render "/jobs/#{@job.current_step}_step", f: f, job: @job %>
 
-          <% unless @job.first_step? %>
-            <div class="col-md-12"></div>
-            <div class="col-md-6"><%= f.button :back, name: "back", value: "true", class: "btn btn-default" %></div>
-            <div class="col-md-6"><%= f.button :restart, name: "restart", value: "true", class: "btn btn-default" %></div>
-          <% end %>
 
-        <% end %>
-      </div>
+              <% unless @job.first_step? %>
+                <div class="change-steps">
+                  <div class="col-xs-12"></div>
+                  <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+                    <%= f.button :back, name: "back", value: "true", class: "btn btn-default" %>
+                  </div>
+                  <div class="col-xs-6 col-sm-4 col-md-3"><%= f.button :restart, name: "restart", value: "true", class: "btn btn-default" %></div>
+                </div>
+              <% end %>
+               
+            <% end %>
+
+          </div>
+        </div>
+      </div> <!-- .container -->
     </div>
   </div>
 

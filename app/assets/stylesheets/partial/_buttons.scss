@@ -1,9 +1,52 @@
+
+@mixin style-buttons($color) {
+	background-color: $color;
+	border: none;
+	border-bottom: 3px solid darken($color, 5%);
+	border-radius: 5px;
+	text-shadow: 0 1px rgba(0,0,0,.2);
+
+
+	&:hover, &:focus {
+		background-color: lighten($color, 8%);
+		box-shadow: 0 0 10px rgba(0,0,0,.2);
+		border-bottom: 3px solid darken($color, 5%);
+		color: #fff;
+	}
+
+	&:active {
+		background-color: lighten($color, 8%);
+		border-bottom: none;
+		border-top: 3px solid darken($color, 8%);
+		text-shadow: 0 -1px rgba(0,0,0,.2);
+	}
+}
+
 .btn {
 	padding: 10px 25px;
 	font-size: 1.25em;
-	margin: 50px 0;
+	outline: none !important;
+	-webkit-appearance: none;
+	appearance: none;
+	
+
+	-webkit-transition: background-color 150ms ease;
+	-moz-transition: background-color 150ms ease;
+	-ms-transition: background-color 150ms ease;
+	transition: background-color 150ms ease;
+
 }
 
 .btn-primary {
+	
+	@include style-buttons($coa-color);
+}
+
+.btn-default {
+	color: #fff;
+	text-transform: uppercase;
+	
+	@include style-buttons($brand-color);
 
 }
+

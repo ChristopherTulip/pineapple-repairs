@@ -1,5 +1,6 @@
 <% @data.each do |device| %>
-  <div class="col-sm-2 text-center">
-    <%= f.button device.name, name: "device_id", value: device.id, class: "btn btn-default" %>
+  <div class="col-sm-3 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center text-center job-choice">
+  	<%= image_tag("#{device.name.downcase}.png") %>
+    <%= f.button device.name, name: "device_id", value: device.id, class: "btn btn-primary" %>
   </div>
 <% end %>
