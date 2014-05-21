@@ -14,7 +14,7 @@
             <div class="col-sm-4 device">
               <%= f.button :submit, name: "device_id", value: device.id do %>
                 <%= image_tag "#{device.name.downcase}.png" %>
-                <h3><%= device.name %></h3>
+                <span class="btn btn-primary"><%= device.name %></span>
               <% end %>
             </div>
           <% end %>

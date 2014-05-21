@@ -1,8 +1,15 @@
-<%= text_field_tag "autocomplete" %>
+<div class="normal-form">
+	<div class="form-row">
+		<%= text_field_tag "autocomplete" %>
 
-<%= f.fields_for :location do |location| %>
-  <%= location.hidden_field :city %>
-  <%= location.hidden_field :country %>
-<% end %>
+		<%= f.fields_for :location do |location| %>
+		  <%= location.hidden_field :city %>
+		  <%= location.hidden_field :country %>
+		<% end %>
+	</div>
 
-<%= f.submit "submit" %>
+
+	<div class="button-row">
+		<%= f.submit "submit", class: "btn btn-primary" %>
+	</div>
+</div>

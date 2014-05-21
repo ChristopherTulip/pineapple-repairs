@@ -1,6 +1,7 @@
-<div class="col-md-3">
+<div class="col-md-3 col-sm-4 col-xs-12 model">
   <%= image_tag "phones/#{model.name.downcase}.png"%>
-  <p><%= model.name %></p>
-  <p>Price: <%= model.pretty_price %></p>
-  <p>Time: <%= model.pretty_time %></p>
+
+  <p class="model-name"><%= model.name %></p>
+  <p class="model-price"><%= model.pretty_price.html_safe %></p>
+  <p class="model-time">Ready in <%= model.pretty_time %></p>
 </div>

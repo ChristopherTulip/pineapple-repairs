@@ -1,5 +1,9 @@
 <% @data.each do |network| %>
-  <div class="col-sm-2 text-center">
-    <%= f.button network.name, name: "network_id", value: network.id, class: "btn btn-default" %>
+  <div class="col-sm-3 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center job-choice">
+  	
+    <%= f.button name: "network_id", value: network.id, class: "" do %>
+    	<%= image_tag("#{network.name.downcase}.png") %>
+    	<span class="btn btn-primary"><%= network.name %></span>
+    <% end %>
   </div>
 <% end %>

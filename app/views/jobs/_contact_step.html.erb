@@ -1,9 +1,14 @@
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number %>
-
-<%= f.submit :"Get In Touch!" %>
-
+<div class="normal-form">
+	<div class="form-row">
+		<%= f.text_field :name, placeholder: "Name" %>
+	</div>
+	<div class="form-row">
+		<%= f.text_field :email, placeholder: "Email" %>
+	</div>
+	<div class="form-row">
+		<%= f.text_field :phone_number, placeholder: "Phone Number" %>
+	</div>
+	<div class="button-row">
+		<%= f.submit :"Get In Touch!", class: "btn btn-primary" %>
+	</div>
+</div>
