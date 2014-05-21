@@ -6,6 +6,7 @@ class Job < ActiveRecord::Base
   belongs_to :problem
   belongs_to :network
   belongs_to :location
+  belongs_to :contractor
 
   first_step  = lambda { |r| r.current_step == r.steps[0] }
   second_step = lambda { |r| r.current_step == r.steps[1] }

@@ -12,13 +12,12 @@ describe Job do
   end
 
   describe "#data_for_step" do
-
     let!(:device1) { create(:device, name: "device1") }
     let!(:device2) { create(:device, name: "device2") }
 
-    let!(:model1) { create(:model, name: "model1", device_id: device1.id) }
-    let!(:model2) { create(:model, name: "model2", device_id: device1.id) }
-    let!(:model3) { create(:model, name: "model3", device_id: device2.id) }
+    let!(:model1) { create(:model, name: "model1", device: device1) }
+    let!(:model2) { create(:model, name: "model2", device: device1) }
+    let!(:model3) { create(:model, name: "model3", device: device2) }
 
     let!(:problem1) { create(:problem, name: "problem1") }
     let!(:problem2) { create(:problem, name: "problem2") }

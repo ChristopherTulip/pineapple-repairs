@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520042925) do
+ActiveRecord::Schema.define(version: 20140520233655) do
 
   create_table "contractors", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140520042925) do
     t.datetime "updated_at"
     t.integer  "network_id"
     t.integer  "location_id"
+    t.integer  "contractor_id"
   end
 
   add_index "jobs", ["network_id"], name: "index_jobs_on_network_id"

@@ -20,7 +20,6 @@ class JobsController < ApplicationController
 
     @data = @job.data_for_step @job.device_id
 
-
     if !@job.new_record?
       cookies.delete(:job)
       redirect_to root_path, notice: "Job Successfully Created - Our technicians will be in touch soon"

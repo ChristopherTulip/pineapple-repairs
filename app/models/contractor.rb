@@ -5,4 +5,5 @@ class Contractor < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :location
+  has_many :jobs
 end

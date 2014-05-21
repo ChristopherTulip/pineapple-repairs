@@ -13,8 +13,8 @@ PineappleRepairs::Application.routes.draw do
   end
 
   authenticated :contractor do
-  	get '/contractors', to: 'contractors#show', as: :user_root
-
+  	# get '/contractors', to: 'contractors#show', as: :user_root
+    resources :contractors
   	resources :jobs, only: [:index, :show]
   end
 
