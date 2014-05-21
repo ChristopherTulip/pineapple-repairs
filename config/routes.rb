@@ -27,7 +27,7 @@ PineappleRepairs::Application.routes.draw do
 
   get "/contact",  to: "pages#contact"
   get "/about",    to: "pages#about"
-  get "/products",  to: "devices#index"
+  get "/repairs",  to: "devices#index"
 
   root 'pages#index'
 end
