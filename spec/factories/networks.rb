@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :network do
+    name { Faker::Name.name }
   end
 end

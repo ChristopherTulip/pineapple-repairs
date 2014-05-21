@@ -53,6 +53,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    ffaker (1.22.1)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     haml (4.0.5)
@@ -170,6 +171,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   factory_girl_rails
+  ffaker
   font-awesome-rails
   haml-rails
   jbuilder (~> 1.2)

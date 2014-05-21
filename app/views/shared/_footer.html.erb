@@ -5,9 +5,9 @@
       <div class="col-sm-4">
         <h5>ABOUT US</h5>
         <p>
-        It all started with a fall on some black ice. Screen cracked, and LCD below, I was iPhone less, a feeling akin to being shoeless - everything was a little harder. Just one month after starting at SFU my connection to figuring out how to get around the campus, and organize my day was all gone, I found myself wondering...
-        <br />
-        <%= link_to "Read more", about_path %>
+          It all started with a fall on some black ice. Screen cracked, and LCD below, I was iPhone less, a feeling akin to being shoeless - everything was a little harder. Just one month after starting at SFU my connection to figuring out how to get around the campus, and organize my day was all gone, I found myself wondering...
+          <br />
+          <%= link_to "Read more", about_path %>
         </p>
       </div>
       <div class="col-sm-4">
@@ -26,7 +26,11 @@
             <%= link_to "Find Us", root_path(anchor: 'find-us') %>
           </li>
           <li>
-            <%= link_to "Contact Us", root_path(anchor: 'contact') %>
+            <% if current_contractor.nil? %>
+              <%= link_to "Sign In", contractor_session_path %>
+            <% else %>
+              <%= link_to "Available Jobs", contractor_path(current_contractor) %>
+            <% end %>
           </li>
         </ul>
       </div>

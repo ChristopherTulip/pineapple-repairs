@@ -6,6 +6,7 @@ class Job < ActiveRecord::Base
   belongs_to :problem
   belongs_to :network
   belongs_to :location
+  belongs_to :contractor
 
   first_step  = lambda { |r| r.current_step == r.steps[0] }
   second_step = lambda { |r| r.current_step == r.steps[1] }
@@ -32,7 +33,7 @@ class Job < ActiveRecord::Base
   # fifth step validations
   validates :name, length: {in: 1..40 },  presence: true, if: sixth_step
   validates :email, length: {in: 1..100 },  presence: true, if: sixth_step
-  validates :phone_number, length: {in: 10..12 }, numericality: true, presence: true, if: sixth_step
+  validates :phone_number, length: {in: 7..20 }, presence: true, if: sixth_step
 
   def steps
     %w[ device model network problem location contact ]

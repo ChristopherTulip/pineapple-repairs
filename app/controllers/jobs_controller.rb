@@ -20,7 +20,6 @@ class JobsController < ApplicationController
 
     @data = @job.data_for_step @job.device_id
 
-
     if !@job.new_record?
       cookies.delete(:job)
       redirect_to root_path, notice: "Job Successfully Created - Our technicians will be in touch soon"
@@ -34,6 +33,14 @@ class JobsController < ApplicationController
   end
 
   def unavailable
+  end
+
+  def accept
+    @job = Job.find(params[:id])
+    @job.contractor = Contractor.find(params[:contractor_id])
+    @job.save
+
+    redirect_to contractor_path(params[:contractor_id])
   end
 
 private

@@ -25,6 +25,7 @@
 	a {
 		&:hover {
 			text-decoration: none;
+			color: $coa-color;
 		}
 	}
 }
@@ -109,6 +110,10 @@ input, button {
 			margin-bottom: 0;
 		}
 	}
+
+	a {
+		font-size: 1.25em;
+	}
 }
 
 .section-white {
@@ -153,23 +158,56 @@ input, button {
 	background-attachment: fixed;
 }
 
-.devices {
-	button {
+.job-choice, .device {
+	img {
 		-webkit-transition: all 100ms ease;
 		-moz-transition: all 100ms ease;
 		-ms-transition: all 100ms ease;
 		transition: all 100ms ease;
+	}
+
+	&:hover {
+		text-decoration: none;
+		img {
+			-webkit-transform: scale(1.2);
+		}
+		
+		color: $brand-color;
+
+		.btn {
+			background-color: lighten($coa-color, 8%);
+			box-shadow: 0 0 10px rgba(0,0,0,.2);
+			border-bottom: 3px solid darken($coa-color, 5%);
+			color: #fff;
+		}
+	}
+
+	&:active {
+		.btn {
+			background-color: lighten($coa-color, 8%);
+			border-bottom: none;
+			border-top: 3px solid darken($coa-color, 8%);
+			text-shadow: 0 -1px rgba(0,0,0,.2);
+		}
+	}
+}
+
+ .devices {
+ 	img {
+
+ 	}
+ }
+
+.job-choice, .devices {
+	button {
+		
 		display: inline-block;
 		
 		background-color: transparent;
 		color: #fff;
 		border: none;
 
-		&:hover {
-			text-decoration: none;
-			-webkit-transform: scale(1.2);
-			color: $brand-color;
-		}
+		
 	}
 
 	.device {
@@ -346,7 +384,7 @@ footer {
 }
 
 .job-progress {
-	margin-bottom: 60px;
+	
 	overflow: auto;
 
 	.step-name {
@@ -364,9 +402,13 @@ footer {
 
 .job-choices {
 	overflow: auto;
+	display: block;
+	clear: both;
 
 	.job-choice {
-		margin-bottom: 50px;
+		padding-top: 50px;
+
+		
 		
 		img {
 			height: 150px;
