@@ -4,9 +4,9 @@ class ContractorsController < ApplicationController
   end
 
 	def show
-		@jobs_finished = Job.all
-		@jobs_current = Job.all
-		@jobs_available = Job.all
+		@jobs_finished = []
+		@jobs_current = Job.where(contractor_id: current_contractor)
+		@jobs_available = Job.where(contractor_id: nil)
 	end
 
 

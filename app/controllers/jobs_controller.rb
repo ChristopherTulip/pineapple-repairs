@@ -35,6 +35,14 @@ class JobsController < ApplicationController
   def unavailable
   end
 
+  def accept
+    @job = Job.find(params[:id])
+    @job.contractor = Contractor.find(params[:contractor_id])
+    @job.save
+
+    redirect_to contractor_path(params[:contractor_id])
+  end
+
 private
 
   def create_job_from_cookie

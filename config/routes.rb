@@ -2,9 +2,9 @@ PineappleRepairs::Application.routes.draw do
 
   devise_for :contractors
 
-  resources :devices
+  resources :devices, only: [:index]
 
-  resources :jobs do
+  resources :jobs, only: [:new, :create] do
     collection do
       # stop 404 in wizard
       get '' => :create
@@ -13,9 +13,14 @@ PineappleRepairs::Application.routes.draw do
   end
 
   authenticated :contractor do
-  	# get '/contractors', to: 'contractors#show', as: :user_root
-    resources :contractors
-  	resources :jobs, only: [:index, :show]
+
+    resources :contractors do
+      resources :jobs, only: [:index, :show] do
+        member do
+          post :accept, to: "jobs#accept"
+        end
+      end
+    end
   end
 
   get "/contact",  to: "pages#contact"
