@@ -44,7 +44,11 @@ input:focus::-webkit-input-placeholder,
       letter-spacing: .2px;
     }
 
-    input:not([type="submit"]) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"] {
       display: block;
       
       border: thin solid #ddd;
@@ -62,6 +66,10 @@ input:focus::-webkit-input-placeholder,
       -webkit-appearance: none;
       transition: all 0.2s ease-in-out;
       padding: 1.4em .5em .3em 1em;
+
+      &:focus {
+        border: thin solid $brand-color;
+      }
     }
   }
 

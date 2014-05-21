@@ -2,9 +2,13 @@
 
   <%= image_tag "phones/#{model.name.downcase}.png"%>
   <div class="model-meta">
-	  <p class="model-name"><%= model.name %></p>
-	  <p class="model-price"><%= model.pretty_price.html_safe %></p>
-	  <p class="model-time">Ready in <%= model.pretty_time %></p>
+  	<header>
+		  <p class="model-name"><%= model.name %></p>
+		</header>
+		<div>
+		  <p class="model-price"><%= model.pretty_price.html_safe %></p>
+		  <p class="model-time">Ready in <%= model.pretty_time %></p>
+		</div>
 	</div>
 </div>
 

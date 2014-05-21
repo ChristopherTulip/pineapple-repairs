@@ -264,18 +264,33 @@ footer {
 }
 
 .model {
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 
 	.model-meta {
+		margin-top: 25px;
 		background-color: #fff;
+		border-radius: 5px;
+		border: thin solid rgba(0,0,0,.2);
+
+		header {
+			border-bottom: thin solid rgba(0, 0, 0, .2);
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			background-color: $coa-color;
+		}
+
+		div {
+			padding: 20px;
+		}
 	}
 
 	.model-name {
 		padding: 5px 0;
 		font-weight: 500;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		background-color: #fff;
+		font-size: 1.25em;
+		color: #fff;
+		
+		background-color: transparent;
 		border-radius: thin solid rgba(0,0,0,.2);
 	}
 
@@ -285,8 +300,17 @@ footer {
 	}
 
 	.model-time {
-
+		color: #888;
+		font-size: 1.1em;
+		margin-top: 5px;
+		margin-bottom: 0;
 	}
+}
+
+.repairs-devices {
+	overflow: auto;
+
+	padding: 50px 15px 10px 15px;
 }
 
 .product-row {
@@ -302,11 +326,13 @@ footer {
 	border-radius: 5px;
 	border: thin solid #bbb;
 	box-shadow: 0 0 10px rgba(0,0,0,.05);
+
+	img {
+		height: 150px;
+	}
 	
 
 	.product-header {
-
-		margin-bottom: 25px;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		border-bottom: thin solid rgba(0,0,0,.2);
@@ -391,6 +417,7 @@ footer {
 }
 
 .job-progress {
+	margin-top: 30px;
 	
 	overflow: auto;
 
