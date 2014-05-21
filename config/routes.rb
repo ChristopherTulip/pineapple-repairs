@@ -8,7 +8,7 @@ PineappleRepairs::Application.routes.draw do
     collection do
       # stop 404 in wizard
       get '' => :create
-      get :unavailable, to: "pages#unavailable"
+      get :unavailable, to: "jobs#unavailable"
     end
   end
 
@@ -19,6 +19,7 @@ PineappleRepairs::Application.routes.draw do
       resources :jobs, only: [] do
         member do
           post :accept, to: "jobs#accept"
+          post :finish, to: "jobs#finish"
         end
       end
     end

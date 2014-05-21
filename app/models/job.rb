@@ -35,6 +35,8 @@ class Job < ActiveRecord::Base
   validates :email, length: {in: 1..100 },  presence: true, if: sixth_step
   validates :phone_number, length: {in: 7..20 }, presence: true, if: sixth_step
 
+  scope :available, -> { where(contractor_id: nil) }
+
   def steps
     %w[ device model network problem location contact ]
   end

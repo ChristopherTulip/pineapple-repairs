@@ -6,4 +6,12 @@ class Contractor < ActiveRecord::Base
 
   has_one :location
   has_many :jobs
+
+  def unfinished_jobs
+    jobs.where(finished: false)
+  end
+
+  def finished_jobs
+    jobs.where(finished: true)
+  end
 end

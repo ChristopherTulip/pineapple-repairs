@@ -44,6 +44,17 @@ class JobsController < ApplicationController
     redirect_to contractor_path(params[:contractor_id])
   end
 
+  def finish
+    @job = Job.find(params[:id])
+
+    if @job.contractor == current_contractor
+      @job.finished = true
+      @job.save
+    end
+
+    redirect_to contractor_path(params[:contractor_id])
+  end
+
 private
 
   def create_job_from_cookie
