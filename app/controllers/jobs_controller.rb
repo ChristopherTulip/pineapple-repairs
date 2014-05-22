@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_filter :redirect_if_not_authenticated, except: [:new, :create]
 
   def show
     @job = Job.find(params[:id])
@@ -53,6 +54,21 @@ class JobsController < ApplicationController
     end
 
     redirect_to contractor_path(params[:contractor_id])
+  end
+
+  def current
+    @jobs = current_contractor.unfinished_jobs
+    render "job_list"
+  end
+
+  def finished
+    @jobs = current_contractor.finished_jobs
+    render "job_list"
+  end
+
+  def available
+    @jobs = Job.available
+    render "job_list"
   end
 
 private

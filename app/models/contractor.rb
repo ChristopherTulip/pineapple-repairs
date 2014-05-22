@@ -4,8 +4,10 @@ class Contractor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :location
+  validates :name, presence: true
+
   has_many :jobs
+  belongs_to :location
 
   def unfinished_jobs
     jobs.where(finished: false)
