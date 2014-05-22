@@ -11,7 +11,7 @@
            </a>
            </h1>
         </div>
-      
+
       <div class="col-xs-8 col-xs-offset-4">
 
         <!-- NAV MENU -->
@@ -24,13 +24,14 @@
             </li>
 
             <li>
-              <%= link_to jobs_path do %>
-                <span>Requests</span>
+
+              <%= link_to jobs_path(restart: true) do %>
+                <span>On Demand</span>
               <% end %>
             </li>
 
             <li>
-              <%= link_to products_path do %>
+              <%= link_to repairs_path do %>
                 <span>Repairs</span>
               <% end %>
             </li>
@@ -38,6 +39,7 @@
             <li>
               <%= link_to about_path do %>
                 <span>About Us</span>
+              
               <% end %>
             </li>
           </ul>

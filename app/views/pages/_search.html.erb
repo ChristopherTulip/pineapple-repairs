@@ -4,9 +4,10 @@
     <div class="container">
       <h2 class="text-center">What's Broken?</h2>
 
-      <p class="text-center">
-      	Choose the device you need fixed, and then the repair you need, and we'll have a technician go directly to you to fix it.
-      </p>
+      <h3 class="text-center">
+      	Tell us what the problem is and we'll send someone out to you to fix it!
+
+      </h3>
 
       <div class="row devices">
         <%= form_for Job.new do |f| %>
@@ -18,6 +19,7 @@
               <% end %>
             </div>
           <% end %>
+          <%= hidden_field_tag "restart", "true" %>
         <% end %>
       </div>
     </div>
