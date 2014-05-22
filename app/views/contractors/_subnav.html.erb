@@ -1,0 +1,6 @@
+<% content_for(:subnav) do %>
+  <li><%= link_to "Available Jobs", available_contractor_jobs_path(current_contractor) %></li>
+  <li><%= link_to "Current Jobs", current_contractor_jobs_path(current_contractor) %></li>
+  <li><%= link_to "Finished Jobs", finished_contractor_jobs_path(current_contractor) %></li>
+  <li><%= link_to "Contractors", contractors_path %></li>
+<% end %>

@@ -16,10 +16,19 @@ PineappleRepairs::Application.routes.draw do
     resources :jobs, only: [:index, :show]
 
     resources :contractors do
+      member do
+      end
+
       resources :jobs, only: [] do
         member do
           post :accept, to: "jobs#accept"
           post :finish, to: "jobs#finish"
+        end
+
+        collection do
+          get :current, to: "jobs#current"
+          get :finished, to: "jobs#finished"
+          get :available, to: "jobs#available"
         end
       end
     end
