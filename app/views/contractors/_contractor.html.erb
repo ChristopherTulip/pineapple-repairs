@@ -1,3 +1,10 @@
 <h3><%= contractor.name %></h3>
 <p><%= contractor.email %></p>
 
+<% unless contractor.verified %>
+  <%= form_tag verify_contractor_path(contractor), class: 'form validate', html: {role: 'form'} do %>
+    <div class="form-group">
+      <%= submit_tag 'Verify', class: 'btn btn-primary inputbtn transition' %>
+    </div>
+  <% end %>
+<% end %>

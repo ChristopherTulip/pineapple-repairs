@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_filter :redirect_if_not_authenticated, except: [:new, :create]
+  before_filter :redirect_if_not_verified, except: [:new, :create]
 
   def show
     @job = Job.find(params[:id])

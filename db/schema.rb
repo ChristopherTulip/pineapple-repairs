@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522160751) do
+ActiveRecord::Schema.define(version: 20140522194621) do
 
   create_table "contractors", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140522160751) do
     t.datetime "updated_at"
     t.string   "name"
     t.boolean  "admin",                  default: false
+    t.boolean  "verified",               default: false
   end
 
   add_index "contractors", ["email"], name: "index_contractors_on_email", unique: true

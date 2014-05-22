@@ -17,6 +17,7 @@ PineappleRepairs::Application.routes.draw do
 
     resources :contractors do
       member do
+        post :verify, to: "contractors#verify"
       end
 
       resources :jobs, only: [] do

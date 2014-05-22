@@ -1,5 +1,6 @@
 class ContractorsController < ApplicationController
   before_filter :redirect_if_not_admin, only: [:index]
+  before_filter :redirect_if_not_verified, execpt: [:verify]
 
   def index
     @contractors = Contractor.all
@@ -10,6 +11,14 @@ class ContractorsController < ApplicationController
 		@jobs_current = current_contractor.unfinished_jobs
 		@jobs_available = Job.available
 	end
+
+  def verify
+    @contractor = Contractor.find(params[:id])
+    @contractor.verified = true
+    @contractor.save
+
+    redirect_to contractors_path, notice: "Contractor Successfully Verified"
+  end
 
 private
   def redirect_if_not_admin

@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
     retidrect_to root_path unless current_contractor.present?
   end
 
+  def redirect_if_not_verified
+    unless current_contractor.verified
+      redirect_to root_path, notice: "Sorry you can't access this area until your profile has been verified!"
+    end
+  end
+
 end
