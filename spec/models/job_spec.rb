@@ -8,23 +8,11 @@ describe Job do
   let!(:location) { create(:location) }
 
   it "should have a valid factory" do
-    expect( build(:job,
-                  device: device1,
-                  model: model1,
-                  problem: problem1,
-                  network: network1,
-                  location: location
-                 )
-          ).to be_all_valid
+    expect( build(:job) ).to be_all_valid
   end
 
   let (:job) do
-    build(:job,
-          device: device1,
-          model: model1,
-          problem: problem1,
-          location: location
-         )
+    build(:job)
   end
 
   describe "steps" do
