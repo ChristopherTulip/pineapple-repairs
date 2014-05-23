@@ -2,10 +2,9 @@
 
 FactoryGirl.define do
   factory :contractor do
-    email 'asdf@jlk.com'
-    password 'please'
-    password_confirmation 'please'
-    confirmed_at DateTime.now.utc
-    name 'contractorio'
+    email { Faker::Internet.email}
+    password '12345678'
+    password_confirmation '12345678'
+    name { Faker::Name.name }
   end
 end

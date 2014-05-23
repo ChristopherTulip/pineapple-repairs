@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Contractor do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should have a valid factory" do
+    expect(build(:contractor)).to be_valid
+  end
 end

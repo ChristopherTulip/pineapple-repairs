@@ -1,6 +1,6 @@
 class ContractorsController < ApplicationController
+  before_filter :redirect_if_not_verified, except: [:verify]
   before_filter :redirect_if_not_admin, only: [:index]
-  before_filter :redirect_if_not_verified, execpt: [:verify]
 
   def index
     @contractors = Contractor.all
