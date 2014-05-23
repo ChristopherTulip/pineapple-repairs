@@ -1,23 +1,29 @@
-<div class="job-list-item row">
+<div class="job-list-item col-md-3 col-sm-4 col-xs-12">
+  
   <%= link_to job_path(job_list_item) do %>
-    <h3>Model: <%= job_list_item.model.name %></h3>
+    <%= image_tag("#{job_list_item.model.name.downcase}.png") %>
+    <div class="job-list-item-meta">
+        <p class="job-list-item-name"><%= job_list_item.model.name %></p>
+      
+        
+        <p class="job-list-item-problem"><%= job_list_item.problem.name %></p>
+        <p class="job-list-item-city"><%= job_list_item.location.city.capitalize %></p>
+    </div>
   <%end%>
-  <h4>City: <%= job_list_item.location.city.capitalize %></h5>
-  <h4>Problem: <%= job_list_item.problem.name %></h5>
-</div>
 
-<div class="job-list-item row">
-  <% if job_list_item.contractor.nil? %>
-    <%= form_tag accept_contractor_job_path(current_contractor, job_list_item), class: 'form validate', html: {role: 'form'} do %>
-      <div class="form-group">
-        <%= submit_tag 'Take Job', class: 'btn btn-primary inputbtn transition' %>
-      </div>
+  <div class="job-list-item-button">
+    <% if job_list_item.contractor.nil? %>
+      <%= form_tag accept_contractor_job_path(current_contractor, job_list_item), class: 'form validate', html: {role: 'form'} do %>
+        <div class="form-group">
+          <%= submit_tag 'Take Job', class: 'btn btn-primary inputbtn transition' %>
+        </div>
+      <% end %>
+    <% elsif !job_list_item.finished %>
+      <%= form_tag finish_contractor_job_path(current_contractor, job_list_item), class: 'form validate', html: {role: 'form'} do %>
+        <div class="form-group">
+          <%= submit_tag 'Close Job', class: 'btn btn-primary inputbtn transition' %>
+        </div>
+      <% end %>
     <% end %>
-  <% elsif !job_list_item.finished %>
-    <%= form_tag finish_contractor_job_path(current_contractor, job_list_item), class: 'form validate', html: {role: 'form'} do %>
-      <div class="form-group">
-        <%= submit_tag 'Close Job', class: 'btn btn-primary inputbtn transition' %>
-      </div>
-    <% end %>
-  <% end %>
+  </div>
 </div>

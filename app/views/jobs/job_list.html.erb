@@ -1,14 +1,34 @@
-<% content_for(:banner) do %>
-  <h2>Jobs</h2>
-<% end %>
+<div class="body-content">
+	<% content_for(:banner) do %>
+	  <h2>Jobs</h2>
+	<% end %>
 
-<%= render "contractors/subnav" %>
+	<%= render "contractors/subnav" %>
 
-<div class="section-page-landing section-grey">
-  <div class="inner-section">
-    <div class="jobs">
-      <h3>Current Jobs</h3>
-      <%= render partial: "job_list_item", collection: @jobs %>
-    </div>
-  </div>
+	<div class="section-page-landing section-grey">
+	  <div class="inner-section">
+
+	    <div class="container">
+	    	<div class="row product-row">
+	    		<div class="col-xs-12">
+	    			<div class="jobs">
+		    			<header class="product-header">
+					    	<h2><%= @title.capitalize %> Jobs</h2>
+					    </header>
+				      
+				      <div class="job-list-items">
+					      <% if @jobs.length > 0 %>
+					      	<%= render partial: "job_list_item", collection: @jobs %>
+					      <% else %>
+					      	<h3>
+					      		No <%= @title %> jobs to show.
+					      	</h3>
+					      <% end %>
+					    </div>
+			    	</div>
+			    </div> <!-- .col-xs-12 -->
+		    </div>
+		  </div> <!-- .container -->
+	  </div> <!-- .inner-section -->
+	</div> <!-- .section-page-landing -->
 </div>
