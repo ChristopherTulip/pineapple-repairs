@@ -25,12 +25,21 @@
           <li>
             <%= link_to "Find Us", root_path(anchor: 'find-us') %>
           </li>
-          <li>
-            <% if current_contractor.nil? %>
+          <% if current_contractor.nil? %>
+            <li>
               <%= link_to "Sign In", contractor_session_path %>
-            <% else %>
+            </li>
+          <% else %>
+            <li>
               <%= link_to "Available Jobs", contractor_path(current_contractor) %>
-            <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_contractor_session_path, method: :delete do %>
+                Logout
+              <% end %>
+          <% end %>
+          <li>
+            
           </li>
         </ul>
       </div>

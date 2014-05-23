@@ -1,10 +1,10 @@
 <div class="normal-form">
 	<div class="form-row">
-		<%= text_field_tag "autocomplete" %>
+		<%= text_field_tag "", nil, class: 'autocomplete' %>
 
 		<%= f.fields_for :location do |location| %>
-		  <%= location.hidden_field :city %>
-		  <%= location.hidden_field :country %>
+		  <%= location.hidden_field :city,  class: 'city-field' %>
+		  <%= location.hidden_field :country, class: 'country-field' %>
 		<% end %>
 	</div>
 

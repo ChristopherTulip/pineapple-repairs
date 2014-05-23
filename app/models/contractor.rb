@@ -6,8 +6,11 @@ class Contractor < ActiveRecord::Base
 
   validates :name, presence: true
 
+  include Gravtastic
+  gravtastic
+  
   has_many :jobs
-  belongs_to :location
+  has_many :locations
 
   def unfinished_jobs
     jobs.where(finished: false)

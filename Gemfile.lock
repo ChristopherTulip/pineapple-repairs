@@ -56,6 +56,7 @@ GEM
     ffaker (1.22.1)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
+    gravtastic (3.2.6)
     haml (4.0.5)
       tilt
     haml-rails (0.5.1)
@@ -173,6 +174,7 @@ DEPENDENCIES
   factory_girl_rails
   ffaker
   font-awesome-rails
+  gravtastic
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

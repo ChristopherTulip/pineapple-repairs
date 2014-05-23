@@ -22,4 +22,20 @@ $('document').ready(function () {
 			document.location.href = this.href;
 		}
 	});
+
+	$('body').on('click', 'a[href=""]', function (event) {
+		event.preventDefault();
+
+		var templateName = $(this).data('template'),
+				promise = $.ajax({
+					url: '/templates/' + templateName + '.html',
+					type: 'GET',
+					cache: false
+				});
+
+		promise.done(function (field) {
+			$('.link-row').before(field);
+			Locations.initialize();
+		});
+	});
 });
