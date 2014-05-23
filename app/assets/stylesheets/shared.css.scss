@@ -4,6 +4,15 @@
 	box-sizing: border-box;
 }
 
+body {
+	a {
+		&:hover {
+			text-decoration: none;
+			color: $coa-color;
+		}
+	}
+}
+
 .body-content {
 	font-family: Helvetica, sans-serif;
 
@@ -22,12 +31,7 @@
 		}
 	}
 	
-	a {
-		&:hover {
-			text-decoration: none;
-			color: $coa-color;
-		}
-	}
+	
 }
 
 input, button {
@@ -87,6 +91,7 @@ input, button {
 
 .inner-section {
 	text-align: center;
+
 
 	h2 {
 		letter-spacing: .8px;
@@ -192,11 +197,7 @@ input, button {
 	}
 }
 
- .devices {
- 	img {
 
- 	}
- }
 
 .job-choice, .devices {
 	button {
@@ -221,11 +222,12 @@ input, button {
 	}
 }
 
+.devices {
+	margin-top: 50px;
+}
+
 .services {
 
-	.service {
-
-	}
 	img {
 		height: 200px;
 	}
@@ -235,10 +237,12 @@ input, button {
 
 	.feature {
 		padding: 20px;
+
 		h4 {
 			font-weight: 600;
 			letter-spacing: .5px;
 		}
+
 		span {
 			font-size: 4em;
 			display: inline-block;
@@ -254,6 +258,21 @@ footer {
 		text-align: center;
 	}
 }
+
+.job-list-item {
+	a {
+		color: #222;
+		font-size: 1em;
+	}
+
+	.job-list-item-meta {
+
+		.job-list-item-name {
+
+		}
+	}
+}
+
 
 .icon-arw-down {
 	position: absolute;
@@ -307,21 +326,21 @@ footer {
 	}
 }
 
-.repairs-devices {
+.repairs-devices, .job-list-items {
 	overflow: auto;
 
 	padding: 50px 15px 10px 15px;
 }
 
 .product-row {
-	margin-bottom: 60px;
+	margin: 60px 0;
 
 	&:last-child {
 		margin-bottom: 0;
 	}
 }
 
-.product {
+.product, .jobs {
 	background-color: #f6f6f6;
 	border-radius: 5px;
 	border: thin solid #bbb;
@@ -340,17 +359,18 @@ footer {
 		background-color: $brand-color;
 		color: #f6f6f6;
 		padding: 20px;
+
+		h2 {
+			margin-bottom: 0;
+		}
 	}
 
-	.device-name {
-		margin-bottom: 0;
-	}
 }
 
 .sub-nav {
   background-color: $brand-color;
-  height: 50px;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
   text-transform: uppercase;
 
   .row, ul, li {
@@ -364,7 +384,29 @@ footer {
 
 
   li {
-    width: 33%;
+
+  	&:first-child:nth-last-child(1) {
+			width: 100%;
+		}
+
+		/* two items */
+		&:first-child:nth-last-child(2),
+		&:first-child:nth-last-child(2) ~ li {
+			width: 50%;
+		}
+
+		/* three items */
+		&:first-child:nth-last-child(3),
+		&:first-child:nth-last-child(3) ~ li {
+			width: 33.333%;
+		}
+
+		/* four items */
+		&:first-child:nth-last-child(4),
+		&:first-child:nth-last-child(4) ~ li {
+			width: 25%;
+		}
+    //width: 33%;
     border-right: thin solid rgba(0,0,0,.1);
     font-weight: 700;
     margin: 0;

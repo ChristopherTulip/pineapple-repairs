@@ -1,15 +1,49 @@
-<ul>
-  <li>City: <%= job.location.city.capitalize %></li>
-  <li>Country: <%= job.location.country.capitalize %>
-  </li>
-  <li>Email: <%= job.email %></li>
+<div class="col-sm-6">
+  <%= image_tag("#{job.model.name.downcase}_large.png") %>
+</div>
+<div class="col-sm-6"> 
+  <div class="job-meta">
+    <div>
+      <h3 class="heading">Contact Info</h3>
+      <ul>
+        <li>Email: <%= job.email %></li>
+        <li>Phone: <%= job.pretty_phone_number %></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="heading">Location</h3>
+      <ul>
+        <li>City: <%= job.location.city.capitalize %></li>
+        <li>Country: <%= job.location.country.capitalize %></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="heading">Job Details</h3>
+      <ul>
+        <li>Problem: <%= job.problem.name %></li>
+        <li>Device: <%= job.device.name %></li>
+        <li>Model: <%= job.model.name %></li>
+        <li>Network: <%= job.network.name %></li>
+        <li>Date Created: <%= job.created_at %></li>
+      </ul>
+    </div>
+   <!--  <li>Date Completed: </li> -->
+    
+  </div>
+</div>
 
-  <li>Phone: <%= job.phone_number %></li>
-  <li>Problem: <%= job.problem.name %></li>
-  <li>Device: <%= job.device.name %></li>
-  <li>Model: <%= job.model.name %></li>
-  <li>Network: <%= job.network.name %></li>
-  <li>Date Completed: </li>
-  <li>Date Created: <%= job.created_at %></li>
-</ul>
-
+<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+  <% if job.contractor.nil? %>
+    <%= form_tag accept_contractor_job_path(current_contractor, job), class: 'form validate', html: {role: 'form'} do %>
+        <div class="form-group">
+          <%= submit_tag 'Take Job', class: 'btn btn-primary inputbtn transition' %>
+        </div>
+      <% end %>
+  <% elsif job.contractor == current_contractor %>
+    <%= form_tag finish_contractor_job_path(current_contractor, job), class: 'form validate', html: {role: 'form'} do %>
+        <div class="form-group">
+          <%= submit_tag 'Close Job', class: 'btn btn-primary inputbtn transition' %>
+        </div>
+      <% end %>
+  <% end %>
+</div>

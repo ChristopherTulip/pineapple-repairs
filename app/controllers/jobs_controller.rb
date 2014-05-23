@@ -59,16 +59,25 @@ class JobsController < ApplicationController
 
   def current
     @jobs = current_contractor.unfinished_jobs
+
+    @title = "current"
+
     render "job_list"
   end
 
   def finished
     @jobs = current_contractor.finished_jobs
+
+    @title = "finished"
+
     render "job_list"
   end
 
   def available
     @jobs = Job.available
+
+    @title = "available"
+
     render "job_list"
   end
 

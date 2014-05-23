@@ -55,4 +55,8 @@ class Job < ActiveRecord::Base
     end
   end
 
+  def pretty_phone_number
+    pretty_phone_number = "(#{phone_number[0,3]}) #{phone_number[3,3]}-#{phone_number[6,10]}"
+  end
+
 end
