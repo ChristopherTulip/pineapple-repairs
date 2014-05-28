@@ -1,10 +1,21 @@
-<h3><%= contractor.name %></h3>
-<p><%= contractor.email %></p>
+<div class="col-sm-4">
+	<%= link_to contractor do %>
+	<h3><%= contractor.name %></h3>
+	<% end %>
+	<p><a href="mailto:<%= contractor.email %>" target="_blank"><%= contractor.email %></a></p>
+	<% if contractor.phone_number %>
+		<p><%= contractor.pretty_phone_number %></p>
+		<% end %>
 
-<% unless contractor.verified %>
-  <%= form_tag verify_contractor_path(contractor), class: 'form validate', html: {role: 'form'} do %>
-    <div class="form-group">
-      <%= submit_tag 'Verify', class: 'btn btn-primary inputbtn transition' %>
-    </div>
-  <% end %>
-<% end %>
+	<% unless contractor.verified %>
+	  <%= form_tag verify_contractor_path(contractor), class: 'form validate', html: {role: 'form'} do %>
+	    <div class="form-group">
+	      <%= submit_tag 'Verify', class: 'btn btn-primary inputbtn transition' %>
+	    </div>
+	  <% end %>
+	<% else %>
+		<p>Verified</p>
+
+	<% end %>
+
+</div>

@@ -225,6 +225,7 @@ input, button {
 }
 
 .services {
+	margin-bottom: 60px;
 
 	img {
 		height: 200px;
@@ -283,7 +284,7 @@ footer {
 .model {
 	margin-bottom: 50px;
 
-	.model-meta {
+	.meta {
 		margin-top: 25px;
 		background-color: #fff;
 		border-radius: 5px;
@@ -324,33 +325,15 @@ footer {
 	}
 }
 
-.repairs-devices, .job-list-items {
+ .section-body {
 	overflow: auto;
 
 	padding: 50px 15px 10px 15px;
 }
 
-.product-row {
-	margin: 60px 0;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
-.product, .jobs {
-	background-color: #f6f6f6;
-	border-radius: 5px;
-	border: thin solid #bbb;
-	box-shadow: 0 0 10px rgba(0,0,0,.05);
-
-	img {
-		height: 150px;
-	}
-	
-
-	.product-header {
-		border-top-left-radius: 5px;
+.blue-header {
+	border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		border-bottom: thin solid rgba(0,0,0,.2);
 		
@@ -358,9 +341,19 @@ footer {
 		color: #f6f6f6;
 		padding: 20px;
 
-		h2 {
+		h2, h3 {
 			margin-bottom: 0;
 		}
+}
+
+.page-section {
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	border: thin solid #bbb;
+	box-shadow: 0 0 10px rgba(0,0,0,.05);
+
+	img {
+		height: 150px;
 	}
 
 }
@@ -481,7 +474,6 @@ footer {
 
 	.job-choice {
 		padding-top: 50px;
-
 		
 		
 		img {
@@ -489,15 +481,60 @@ footer {
 		}	
 	}
 	
-
-	.btn {
-
-	}
-
 	.change-steps {
 
 		div[class^="col"] {
 			margin-top: 20px;
 		}
+	}
+}
+
+.account-box {
+	padding: 20px;
+
+	> div {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.account-image {
+		width: 80px;
+		margin-right: 20px;
+		padding-top: 20px;
+
+		img {.
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.account-meta {
+		width: calc(100% -100px);
+	}
+}
+
+.page-section {
+	margin-bottom: 75px;
+	ul {
+			padding: 10px 0;
+			li {
+				margin: 10px 0;
+				font-size: 1.2em;
+				list-style: none;
+			}
+		}
+}
+	
+.job {
+	.job-meta-section {
+		margin-bottom: 30px;
+	}
+
+	.heading {
+		text-transform: uppercase;
+	}
+	.meta {
+		
+		
 	}
 }

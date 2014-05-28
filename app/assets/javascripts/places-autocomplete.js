@@ -8,20 +8,30 @@ var Locations = {
           );
       
       google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        console.log(autocomplete);
         Locations.fillInAddress(autocomplete, $this);
       });
     });
   },
   fillInAddress: function (autocomplete, $this) {
     var place = autocomplete.getPlace();
+    //console.log(place)
 
     for (var i = 0; i < place.address_components.length; i++) {
+      //console.log(place.address_components[i]);
       if ( place.address_components[i].types[0] == "locality" ) {
-        $this.find('.city-field').val( place.address_components[i].long_name )
+        //console.log($this.find('.city-field'));
+        //$this.find('.city-field').val( place.address_components[i].long_name )
+        $("#contractor_location_city").val(place.address_components[i].long_name);
+        //console.log($this.find('.city-field').val());
       }
 
       if ( place.address_components[i].types[0] == "country" ) {
-        $this.find('.country-field').val( place.address_components[i].long_name )
+        //console.log($this.find('.country-field'));
+
+        //$this.find('.country-field').val( place.address_components[i].long_name )
+        $("#contractor_location_country").val(place.address_components[i].long_name);
+        //console.log($this.find('.country-field').val());
       }
     }
   },

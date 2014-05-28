@@ -11,14 +11,14 @@
 	    <div class="container">
 	    	<div class="row product-row">
 	    		<div class="col-xs-12">
-	    			<div class="jobs">
-		    			<header class="product-header">
+	    			<div class="jobs page-section">
+		    			<header class="blue-header">
 					    	<h2><%= @title.capitalize %> Jobs</h2>
 					    </header>
 				      
-				      <div class="job-list-items">
+				      <div class="job-list-items section-body">
 					      <% if @jobs.length > 0 %>
-					      	<%= render partial: "job_list_item", collection: @jobs %>
+					      	<%= render partial: "job_list_item", collection: @jobs, locals: { half: false } %>
 					      <% else %>
 					      	<h3>
 					      		No <%= @title %> jobs to show.

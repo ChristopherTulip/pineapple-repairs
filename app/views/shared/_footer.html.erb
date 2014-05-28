@@ -29,6 +29,9 @@
             <li>
               <%= link_to "Sign In", contractor_session_path %>
             </li>
+            <li>
+              <%= link_to "Sign Up", new_contractor_registration_path %>
+            </li>
           <% else %>
             <li>
               <%= link_to "Available Jobs", contractor_path(current_contractor) %>

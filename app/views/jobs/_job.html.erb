@@ -2,37 +2,37 @@
   <%= image_tag("#{job.model.name.downcase}_large.png") %>
 </div>
 <div class="col-sm-6"> 
-  <div class="job-meta">
-    <div>
-      <h3 class="heading">Contact Info</h3>
-      <ul>
-        <li>Email: <%= job.email %></li>
-        <li>Phone: <%= job.pretty_phone_number %></li>
+  <div class="meta">
+    <div class="job-meta-section page-section">
+      <header class="blue-header">
+        <h3 class="heading">Contact Info</h3>
+      </header>
+        <ul>
+          <li><%= job.name %></li>
+          <li><a href="mailto:<%= job.email %>" target="_blank"><%= job.email %></a></li>
+          <li><%= job.pretty_phone_number %></li>
+          <li><%= job.location.city.capitalize %>, <%= job.location.country.capitalize %></li>
+        </ul>
+    </div>
+    
+    <div class="job-meta-section page-section">
+      <header class="blue-header">
+        <h3 class="heading">Job Details</h3>
+      </header>
+        <ul>
+        <li><%= job.problem.name %></li>
+        <li><%= job.model.name %></li>
+        <li><%= job.network.name %></li>
+        <li>Created: <%= job.created_at.to_formatted_s(:long_ordinal) %></li>
+       
       </ul>
     </div>
-    <div>
-      <h3 class="heading">Location</h3>
-      <ul>
-        <li>City: <%= job.location.city.capitalize %></li>
-        <li>Country: <%= job.location.country.capitalize %></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="heading">Job Details</h3>
-      <ul>
-        <li>Problem: <%= job.problem.name %></li>
-        <li>Device: <%= job.device.name %></li>
-        <li>Model: <%= job.model.name %></li>
-        <li>Network: <%= job.network.name %></li>
-        <li>Date Created: <%= job.created_at %></li>
-      </ul>
-    </div>
-   <!--  <li>Date Completed: </li> -->
     
   </div>
 </div>
 
-<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+
   <% if job.contractor.nil? %>
     <%= form_tag accept_contractor_job_path(current_contractor, job), class: 'form validate', html: {role: 'form'} do %>
         <div class="form-group">

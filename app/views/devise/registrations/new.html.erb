@@ -17,6 +17,10 @@
   </div>
 
   <div class="form-row">
+    <%= f.text_field :phone_number, required: true, placeholder: "Phone Number" %>
+  </div>
+
+  <div class="form-row">
     <%= text_field_tag "", nil, class: 'autocomplete', required: true %>
     <%= f.fields_for :location do |location| %>
       <%= location.hidden_field :city,  class: 'city-field' %>
@@ -24,9 +28,9 @@
     <% end %>
   </div>
 
-  <div class="link-row">
+  <!-- <div class="link-row">
     <a href="" data-template="location_field">Add another Location</a>
-  </div>
+  </div> -->
 
   
 

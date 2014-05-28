@@ -1,4 +1,4 @@
-<div class="job-list-item col-md-3 col-sm-4 col-xs-12">
+<div class="job-list-item <% if half %>col-md-6 col-sm-6<% else %>col-md-3 col-sm-4<% end %> col-xs-12">
   
   <%= link_to job_path(job_list_item) do %>
     <%= image_tag("#{job_list_item.model.name.downcase}.png") %>
@@ -18,7 +18,7 @@
           <%= submit_tag 'Take Job', class: 'btn btn-primary inputbtn transition' %>
         </div>
       <% end %>
-    <% elsif !job_list_item.finished %>
+    <% elsif !job_list_item.finished && job_list_item.contractor == current_contractor %>
       <%= form_tag finish_contractor_job_path(current_contractor, job_list_item), class: 'form validate', html: {role: 'form'} do %>
         <div class="form-group">
           <%= submit_tag 'Close Job', class: 'btn btn-primary inputbtn transition' %>

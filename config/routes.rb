@@ -1,6 +1,6 @@
 PineappleRepairs::Application.routes.draw do
 
-  devise_for :contractors
+  devise_for :contractors, :controllers => { :registrations => "registrations"}
 
   resources :devices, only: [:index]
 

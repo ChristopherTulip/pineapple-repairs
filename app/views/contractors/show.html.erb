@@ -9,43 +9,82 @@
 		<div class="inner-section">
 
 			<div class="container">
-				<h2>Your Account</h2>
 			
 
 				<div class="row">
-					<div class="col-sm-6">
-						<%= image_tag("contractor.jpg") %>
+					<div class="col-sm-6 col-sm-offset-3">
+						<div class="page-section">
+							<header class="blue-header">
+								<h3>Account Info</h3>
+							</header>
+							<div class="account-box">
+								<div class="account-image">
+									<%= image_tag(current_contractor.gravatar_url) %>
+								</div>
 
-						<h3>Account Info</h3>
-						<ul>
-							<li>
-								Name: <%= current_contractor.name %>
-							</li>
-							<li>
-								Email: <%= current_contractor.email %>
-							</li>
-						</ul>
+								<div class="account-meta">
+									<ul>
+
+										<li>
+											<%= current_contractor.name %>
+										</li>
+										<li>
+											<%= current_contractor.email %>
+										</li>
+										<li>
+											<%= current_contractor.pretty_phone_number %>
+										</li>
+										<% if current_contractor.location %>
+										<li>
+
+											<%= current_contractor.location.city.capitalize %>, <%= current_contractor.location.country.capitalize %>
+										</li>
+										<% end %>
+									</ul>
+								</div>
+							</div>
+						</div> <!-- .page-section -->
+						
 					</div>
 
-					<div class="jobs-current col-sm-6">
-						<h3>Current Jobs</h3>
-						<%= render partial: "jobs/job_list_item", collection: @jobs_current %>
-					</div>
+					
 				</div>
 
 				<div class="container">
 					<h2>Your Jobs</h2>
 				</div>
 				<div class="row">
-
-					<div class="jobs-available col-sm-6">
-						<h3>Available Jobs</h3>
-						<%= render partial: "jobs/job_list_item", collection: @jobs_available %>
+					<div class="jobs-current col-sm-6">
+						<div class="page-section">
+							<header class="blue-header">
+								<h3>Current Jobs</h3>
+							</header>
+							<div class="section-body">
+								<%= render partial: "jobs/job_list_item", collection: @jobs_current, locals: { half: true } %>
+							</div>
+						</div>
 					</div>
+					<!-- <div class="jobs-available col-sm-6">
+						<div class="page-section">
+							<header class="blue-header">
+								<h3>Available Jobs</h3>
+							</header>
+							<div class="section-body">
+								<%= render partial: "jobs/job_list_item", collection: @jobs_available, locals: { half: true } %>
+							</div>
+
+						</div>
+					</div> -->
 
 					<div class="jobs-finished col-sm-6">
-						<h3>Finished Jobs</h3>
-						<%= render partial: "jobs/job_list_item", collection: @jobs_finished %>
+						<div class="page-section">
+							<header class="blue-header">
+								<h3>Finished Jobs</h3>
+							</header>
+							<div class="section-body">
+								<%= render partial: "jobs/job_list_item", collection: @jobs_finished, locals: { half: true } %>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div> <!-- .container -->
