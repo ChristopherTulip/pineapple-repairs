@@ -9,7 +9,7 @@
 		<div class="inner-section">
 
 			<div class="container">
-			
+
 
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3">
@@ -19,35 +19,35 @@
 							</header>
 							<div class="account-box">
 								<div class="account-image">
-									<%= image_tag(current_contractor.gravatar_url) %>
+									<%= image_tag(@contractor.gravatar_url) %>
 								</div>
 
 								<div class="account-meta">
 									<ul>
 
 										<li>
-											<%= current_contractor.name %>
+											<%= @contractor.name %>
 										</li>
 										<li>
-											<%= current_contractor.email %>
+											<%= @contractor.email %>
 										</li>
 										<li>
-											<%= current_contractor.pretty_phone_number %>
+											<%= @contractor.pretty_phone_number %>
 										</li>
-										<% if current_contractor.location %>
+										<% if @contractor.location %>
 										<li>
 
-											<%= current_contractor.location.city.capitalize %>, <%= current_contractor.location.country.capitalize %>
+											<%= @contractor.location.city.capitalize %>, <%= @contractor.location.country.capitalize %>
 										</li>
 										<% end %>
 									</ul>
 								</div>
 							</div>
 						</div> <!-- .page-section -->
-						
+
 					</div>
 
-					
+
 				</div>
 
 				<div class="container">

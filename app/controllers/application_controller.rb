@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def redirect_if_not_authenticated
-    retidrect_to root_path unless current_contractor.present?
+    redirect_to root_path unless current_contractor.present?
   end
 
   def redirect_if_not_verified

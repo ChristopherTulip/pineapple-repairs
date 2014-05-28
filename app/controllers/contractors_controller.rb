@@ -7,9 +7,9 @@ class ContractorsController < ApplicationController
   end
 
 	def show
+    @contractor = Contractor.find(params[:id])
 		@jobs_finished = current_contractor.finished_jobs
 		@jobs_current = current_contractor.unfinished_jobs
-		@jobs_available = Job.available
 	end
 
   def verify
