@@ -18,6 +18,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 		if @contractor.save
 			redirect_to root_path, notice: "Thanks for registering as a contractor - we'll be in touch shortly"
+			return
 		end
 	end
 end
