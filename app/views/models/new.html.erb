@@ -1,0 +1,13 @@
+<%= content_for(:banner) do %>
+  <%= form_for @model do |f| %>
+    Device name: <%= f.text_field :name %><br />
+    Price (in cents) : <%= f.number_field :price %><br />
+    Time (in minutes) : <%= f.number_field :time %><br />
+
+    Device : <%= collection_select :model, :device_id, Device.all, :id, :name  %><br />
+
+    Avatar : <%= f.file_field :avatar %>
+
+    <%= f.submit %>
+  <% end %>
+<% end %>

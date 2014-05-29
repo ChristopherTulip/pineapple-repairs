@@ -2,7 +2,10 @@ PineappleRepairs::Application.routes.draw do
 
   devise_for :contractors, :controllers => { :registrations => "registrations"}
 
-  resources :devices, only: [:index]
+  resources :problem, only: [:new, :edit, :create, :update]
+  resources :models, only: [:new, :edit, :create, :update]
+  resources :devices, only: [:new, :edit, :create, :update, :index]
+  resources :networks, only: [:new, :edit, :create, :update]
 
   resources :jobs, only: [:new, :create] do
     collection do

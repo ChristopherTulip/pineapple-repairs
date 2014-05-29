@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_if_not_admin
+    unless current_contractor.admin
+      redirect_to contractor_path(current_contractor), notice: "Sorry this is an admin only area!"
+    end
+  end
 end

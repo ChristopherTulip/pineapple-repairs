@@ -16,9 +16,9 @@ gem "font-awesome-rails"
 
 gem 'devise'
 gem 'gravtastic'
+gem "paperclip", "~> 4.1"
 
 group :development do
-  gem 'haml-rails'
   gem 'jbuilder', '~> 1.2'
   gem 'pry-rails'
 end
