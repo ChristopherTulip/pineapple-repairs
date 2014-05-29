@@ -4,13 +4,15 @@ class Contractor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  #validates :name, presence: true
-
   include Gravtastic
   gravtastic
-  
+
   has_many :jobs
   belongs_to :location
+
+  validates :phone_number, presence: true
+  validates :name, presence: true
+  validates :location_id, presence: true
 
   def unfinished_jobs
     jobs.where(finished: false)
@@ -21,6 +23,10 @@ class Contractor < ActiveRecord::Base
   end
 
   def pretty_phone_number
-    pretty_phone_number = "(#{phone_number[0,3]}) #{phone_number[3,3]}-#{phone_number[6,10]}"
+    "(#{phone_number[0,3]}) #{phone_number[3,3]}-#{phone_number[6,10]}" if phone_number.present?
+  end
+
+  def can_close? job
+    job.contractor == self && !job.finished
   end
 end

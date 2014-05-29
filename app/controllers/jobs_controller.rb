@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  before_filter :redirect_if_not_authenticated, except: [:new, :create]
-  before_filter :redirect_if_not_verified, except: [:new, :create]
+  before_filter :redirect_if_not_authenticated, except: [:new, :create, :unavailable]
+  before_filter :redirect_if_not_verified, except: [:new, :create, :unavailable]
 
   def show
     @job = Job.find(params[:id])
@@ -25,8 +25,15 @@ class JobsController < ApplicationController
 
     if !@job.new_record?
       cookies.delete(:job)
+
+      UserMailer.job("created", "customer", @job)
+      UserMailer.job("created", "contractor", @job)
+
+      #UserMailer.job_created_contractor(@job)
+
       redirect_to root_path, notice: "Job Successfully Created - Our technicians will be in touch soon"
     elsif @job.current_step == "location" && @job.location.nil? && params[:job].present?
+      binding.pry
       cookies.delete(:job)
       redirect_to unavailable_jobs_path
     else

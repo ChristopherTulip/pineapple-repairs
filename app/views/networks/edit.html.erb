@@ -1,0 +1,8 @@
+<%= content_for(:banner) do %>
+  <%= form_for @network do |f| %>
+    Network name: <%= f.text_field :name %><br />
+    Avatar : <%= f.file_field :avatar %><br />
+
+    <%= f.submit %>
+  <% end %>
+<% end %>

@@ -45,40 +45,7 @@
     </div>
   </div>
 
-  <div class="section-page-landing" id="search">
-    <div class="inner-section">
-      <div class="container">
-        <h2 class="text-center">More Options?</h2>
-
-        <p class="text-center">
-          If you're not in one of our service areas we also have the following options to fix up your device!
-        </p>
-
-        <div class="row">
-          <div class="col-md-6 text-center">
-            <h3>DIY Kits</h3>
-
-            <h4>
-              If you're tech savy and want to try your hand at fixing your own phone check out our selection of kits!
-            </h4>
-
-            <%= link_to "Browse kits now!", repairs_path %>
-
-          </div>
-
-          <div class="col-md-6 text-center">
-            <h3>Mail In Repair</h3>
-
-            <h4>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-            </h4>
-
-            <%= link_to "See our mail in promise!", repairs_path %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "/jobs/more_options" %>
 </div>
 
 <% if @job.current_step == "location" %>

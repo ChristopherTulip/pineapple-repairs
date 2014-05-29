@@ -1,7 +1,7 @@
 <div class="col-sm-6">
   <%= image_tag("#{job.model.name.downcase}_large.png") %>
 </div>
-<div class="col-sm-6"> 
+<div class="col-sm-6">
   <div class="meta">
     <div class="job-meta-section page-section">
       <header class="blue-header">
@@ -14,7 +14,7 @@
           <li><%= job.location.city.capitalize %>, <%= job.location.country.capitalize %></li>
         </ul>
     </div>
-    
+
     <div class="job-meta-section page-section">
       <header class="blue-header">
         <h3 class="heading">Job Details</h3>
@@ -24,10 +24,10 @@
         <li><%= job.model.name %></li>
         <li><%= job.network.name %></li>
         <li>Created: <%= job.created_at.to_formatted_s(:long_ordinal) %></li>
-       
+
       </ul>
     </div>
-    
+
   </div>
 </div>
 
@@ -39,7 +39,7 @@
           <%= submit_tag 'Take Job', class: 'btn btn-primary inputbtn transition' %>
         </div>
       <% end %>
-  <% elsif job.contractor == current_contractor %>
+  <% elsif current_contractor.can_close?(job) %>
     <%= form_tag finish_contractor_job_path(current_contractor, job), class: 'form validate', html: {role: 'form'} do %>
         <div class="form-group">
           <%= submit_tag 'Close Job', class: 'btn btn-primary inputbtn transition' %>

@@ -13,12 +13,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem "font-awesome-rails"
+gem 'mandrill-api'
+gem 'figaro'
 
 gem 'devise'
 gem 'gravtastic'
+gem "paperclip", "~> 4.1"
 
 group :development do
-  gem 'haml-rails'
   gem 'jbuilder', '~> 1.2'
   gem 'pry-rails'
 end

@@ -31,6 +31,10 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.1.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -47,6 +51,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    excon (0.34.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -54,16 +59,12 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.22.1)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     gravtastic (3.2.6)
-    haml (4.0.5)
-      tilt
-    haml-rails (0.5.1)
-      actionpack (~> 4.0.0)
-      activesupport (~> 4.0.0)
-      haml (>= 3.1, < 5.0)
-      railties (~> 4.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -76,11 +77,19 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-api (1.0.51)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.2)
     orm_adapter (0.5.0)
+    paperclip (4.1.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -173,11 +182,13 @@ DEPENDENCIES
   devise
   factory_girl_rails
   ffaker
+  figaro
   font-awesome-rails
   gravtastic
-  haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  mandrill-api
+  paperclip (~> 4.1)
   pg
   pry-rails
   rails (= 4.0.0)

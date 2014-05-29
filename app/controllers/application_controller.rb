@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def redirect_if_not_authenticated
-    retidrect_to root_path unless current_contractor.present?
+    redirect_to root_path unless current_contractor.present?
   end
 
   def redirect_if_not_verified
@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_if_not_admin
+    unless current_contractor.admin
+      redirect_to contractor_path(current_contractor), notice: "Sorry this is an admin only area!"
+    end
+  end
 end
