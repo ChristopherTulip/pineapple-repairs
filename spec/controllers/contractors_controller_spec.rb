@@ -94,4 +94,6 @@ describe ContractorsController do
 
     end
   end
+
+  
 end

@@ -3,27 +3,33 @@ class RegistrationsController < Devise::RegistrationsController
 	def create
 		super
 
-		# SHOULD NOT HAVE TO DO THIS, BUT FOR SOME REASON NAME IS NOT WORKING
-		@contractor.name = params[:contractor][:name]
-		@contractor.phone_number = params[:contractor][:phone_number]
-		
+		if @contractor.save
 
-		# locations = params
-		city = params[:contractor][:location][:city].downcase
-		country = params[:contractor][:location][:country].downcase
+			# SHOULD NOT HAVE TO DO THIS, BUT FOR SOME REASON NAME IS NOT WORKING
+			@contractor.name = params[:contractor][:name]
+			@contractor.phone_number = params[:contractor][:phone_number]
+			
 
-		location = Location.where(city: city, country: country).first
+			# locations = params
+			city = params[:contractor][:location][:city].downcase
+			country = params[:contractor][:location][:country].downcase
+
+			location = Location.where(city: city, country: country).first
 
 
-		if location.nil?
-			location = Location.create(city: city, country: country)
+			if location.nil?
+				location = Location.create(city: city, country: country)
+			end
+
+			@contractor.location = location
+			
+			location.save
+			@contractor.save
+
+		else
+
 		end
 
-		@contractor.location = location
-		location.save
-		@contractor.save
-
-		
 	end
 
 end
