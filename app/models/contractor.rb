@@ -22,11 +22,11 @@ class Contractor < ActiveRecord::Base
     jobs.where(finished: true)
   end
 
-  def pretty_phone_number
-    "(#{phone_number[0,3]}) #{phone_number[3,3]}-#{phone_number[6,10]}" if phone_number.present?
-  end
-
   def can_close? job
     job.contractor == self && !job.finished
+  end
+
+  def pretty_phone_number
+    "(#{phone_number[0,3]}) #{phone_number[3,3]}-#{phone_number[6,10]}" if phone_number.present?
   end
 end
