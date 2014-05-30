@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Device.create(name: "Phone")
 Device.create(name: "iPod")
 Device.create(name: "iPad")
@@ -41,17 +33,24 @@ Model.create(name: "iPad Mini", price: 14999, time: 1440, device: @ipad )
 Model.create(name: "iPad Mini Retina", price: 19999, time: 1440, device: @ipad )
 
 # iPod Models
-Model.create(name: "2th Generation iPod", price: 4999, time: 60, device: @ipod )
+Model.create(name: "2nd Generation iPod", price: 4999, time: 60, device: @ipod )
 Model.create(name: "3rd Generation iPod", price: 4999, time: 60, device: @ipod )
 Model.create(name: "4th Generation iPod", price: 5999, time: 60, device: @ipod )
 Model.create(name: "5th Generation iPod", price: 14999, time: 60, device: @ipod )
 
-Problem.create(name: "Broken Screen")
+Problem.create(name: "Cracked Screen")
+Problem.create(name: "Water Damage")
+Problem.create(name: "Dead Battery")
+Problem.create(name: "Sound Issues")
+Problem.create(name: "Broken Button")
 Problem.create(name: "Other")
-Problem.create(name: "Not Turning On")
 
-Network.create(name: "AT&T")
-Network.create(name: "Koodo")
 Network.create(name: "Telus")
+Network.create(name: "Koodo")
+Network.create(name: "Rogers")
+Network.create(name: "Fido")
+Network.create(name: "Bell")
+Network.create(name: "Virgin")
+Network.create(name: "Wind")
 
 Location.create(city: "vancouver", country: "canada")

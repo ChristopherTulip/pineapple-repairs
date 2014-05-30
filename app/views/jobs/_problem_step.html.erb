@@ -2,7 +2,7 @@
   <div class="col-sm-3 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center text-center job-choice">
 
     <%= f.button name: "problem_id", value: problem.id, class: "" do %>
-    	<%= image_tag("#{problem.name.downcase}.png") %>
+    	<%= image_tag("problems/#{problem.name.downcase}.png") %>
     	<span class="btn btn-primary"><%= problem.name %></span>
     <% end %>
   </div>

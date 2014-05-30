@@ -59,8 +59,8 @@ input, button {
 		width: 40%;
 		float: right;
 		margin: 0 0 30px 60px;
-		
-		
+
+
 
 		@media only screen and (max-width: 768px) {
 			display: block;
@@ -131,7 +131,7 @@ input, button {
 }
 
 .section-light-grey {
-	
+
 }
 
 .section-grey {
@@ -174,7 +174,7 @@ input, button {
 		img {
 			-webkit-transform: scale(1.2);
 		}
-		
+
 		color: $brand-color;
 
 		.btn {
@@ -199,14 +199,14 @@ input, button {
 
 .job-choice, .devices {
 	button {
-		
+
 		display: inline-block;
-		
+
 		background-color: transparent;
 		color: #fff;
 		border: none;
 
-		
+
 	}
 
 	.device {
@@ -307,7 +307,7 @@ footer {
 		font-weight: 500;
 		font-size: 1.25em;
 		color: #fff;
-		
+
 		background-color: transparent;
 		border-radius: thin solid rgba(0,0,0,.2);
 	}
@@ -336,7 +336,7 @@ footer {
 	border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
 		border-bottom: thin solid rgba(0,0,0,.2);
-		
+
 		background-color: $brand-color;
 		color: #f6f6f6;
 		padding: 20px;
@@ -409,7 +409,7 @@ footer {
       margin: 0;
       border-left: thin solid rgba(0,0,0,.1);
     }
-    
+
     a {
       display: inline-block;
       width: 100%;
@@ -432,7 +432,7 @@ footer {
   			border-right: none;
   		}
   	}
-  }  
+  }
 } // #sub-nav
 
 .list-inline {
@@ -451,7 +451,7 @@ footer {
 
 .job-progress {
 	margin-top: 30px;
-	
+
 	overflow: auto;
 
 	.step-name {
@@ -463,7 +463,7 @@ footer {
 			&:not(.shown) {
 				display: none;
 			}
-		}	
+		}
 	}
 }
 
@@ -474,14 +474,15 @@ footer {
 
 	.job-choice {
 		padding-top: 50px;
-		
-		
+
+
 		img {
 			height: 150px;
-		}	
+		}
 	}
-	
+
 	.change-steps {
+		clear: both;
 
 		div[class^="col"] {
 			margin-top: 20px;
@@ -524,7 +525,7 @@ footer {
 			}
 		}
 }
-	
+
 .job {
 	.job-meta-section {
 		margin-bottom: 30px;
@@ -534,7 +535,21 @@ footer {
 		text-transform: uppercase;
 	}
 	.meta {
-		
-		
+
+
+	}
+}
+
+.flash {
+	background-color: #1cb1d0;
+	color: white;
+	height: 65px;
+	top: 65px;
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+
+	&.error {
+		background-color: $coa-color;
 	}
 }

@@ -14,7 +14,7 @@
           <% @devices.each do |device| %>
             <div class="col-sm-4 device">
               <%= f.button :submit, name: "device_id", value: device.id do %>
-                <%= image_tag "#{device.name.downcase}.png" %>
+                <%= image_tag "devices/#{device.name.downcase}.png" %>
                 <span class="btn btn-primary"><%= device.name %></span>
               <% end %>
             </div>
