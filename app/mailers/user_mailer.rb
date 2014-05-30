@@ -17,64 +17,64 @@ class UserMailer < ActionMailer::Base
   private
 
   def create_template_content (type, recipient, job, contractor = nil)
+
+    # consistent across all messages
+    template_content = [
+      
+      {
+        name: "phone_number",
+        content: "#{job.phone_number}"
+      },
+      {
+        name: "model",
+        content: "#{job.model}"
+      },
+      {
+        name: "network",
+        content: "#{job.network}"
+      },
+      {
+        name: "problem",
+        content: "#{job.problem}"
+      }
+    ]
+
+    # specific requirements
     case recipient
     when "customer"
+      template_content << {
+        name: "customer_name",
+        content: "#{job.name}"
+      }
 
       case type
       when "created"
-        return template_content = [
-          {
-            name: "customer_name",
-            content: "#{job.name}"
-          },
-          {
-            name: "model",
-            content: "#{job.model}"
-          }
-        ]
+        
 
       when "accepted"
-        return template_content = [
-          {
-            name: "customer_name",
-            content: "#{job.name}"
-          },
-          {
-            name: "model",
-            content: "#{job.model}"
-          }
-        ]
+        
       end
 
 
     when "contractor"
+      template_content << {
+        name: "contractor_name",
+        content: "#{contractor.name}"
+      }
       
       case type
       when "created"
-        return template_content = [
-          {
-            name: "customer_name",
-            content: "#{job.name}"
-          },
-          {
-            name: "model",
-            content: "#{job.model}"
-          }
-        ]
+        template_content << {
+          name: "job_link",
+          content: "<a href='http://www.pineapplerepairs.ca/jobs/#{job.id}'>http://www.pineapplerepairs.ca/jobs/#{job.id}</a>"
+        }
 
       when "accepted"
-        return template_content = [
-          {
-            name: "customer_name",
-            content: "#{job.name}"
-          },
-          {
-            name: "model",
-            content: "#{job.model}"
-          }
-        ]
+        
       end
     end
+
+    return template_content
   end
 
   def create_message (type, recipient, job, contractor = nil)

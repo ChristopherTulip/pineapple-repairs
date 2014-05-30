@@ -13,8 +13,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem "font-awesome-rails"
-gem 'mandrill-api'
-gem 'figaro'
+gem 'mandrill-api' # for sending emails
+gem 'figaro' # for environment variables
 
 gem 'devise'
 gem 'gravtastic'
@@ -33,6 +33,7 @@ end
 
 group :production do
 	gem 'pg'
+  gem 'rails_12factor' # heroku asset pipeline
 end
 
 group :doc do

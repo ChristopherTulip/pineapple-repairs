@@ -29,11 +29,8 @@ class JobsController < ApplicationController
       UserMailer.job("created", "customer", @job)
       UserMailer.job("created", "contractor", @job)
 
-      #UserMailer.job_created_contractor(@job)
-
       redirect_to root_path, notice: "Job Successfully Created - Our technicians will be in touch soon"
     elsif @job.current_step == "location" && @job.location.nil? && params[:job].present?
-      binding.pry
       cookies.delete(:job)
       redirect_to unavailable_jobs_path
     else
