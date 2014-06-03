@@ -184,11 +184,11 @@ a.btn.btn-default.btn-teplok:focus{
 	color: #1CB1D0;
 	background: #1C1C1C;
 }
-#nav-menu .menus ul li.active a,
-#nav-menu .menus ul li.active a:hover,
-#nav-menu .menus ul li.active a:focus{
+#nav-menu .menus ul li.current a,
+#nav-menu .menus ul li.current a:hover,
+#nav-menu .menus ul li.current a:focus{
 	color: #1CB1D0;
-	background: #1C1C1C;
+	background: #fff;
 }
 #nav-menu .menus ul li a i{display: none;}
 .banner .awesome-slogan{

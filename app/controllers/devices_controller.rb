@@ -1,7 +1,7 @@
 class DevicesController < ApplicationController
-  before_filter :redirect_if_not_authenticated, execpt: [:index]
-  before_filter :redirect_if_not_verified, execpt: [:index]
-  before_filter :redirect_if_not_admin, execpt: [:index]
+  before_filter :redirect_if_not_authenticated, except: [:index]
+  before_filter :redirect_if_not_verified, except: [:index]
+  before_filter :redirect_if_not_admin, except: [:index]
 
   def index
     @devices = Device.all

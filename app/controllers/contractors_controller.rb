@@ -22,3 +22,5 @@ class ContractorsController < ApplicationController
   end
 
 end
+
+
