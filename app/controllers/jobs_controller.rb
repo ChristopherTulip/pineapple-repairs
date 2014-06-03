@@ -47,11 +47,15 @@ class JobsController < ApplicationController
     @job.contractor = Contractor.find(params[:contractor_id])
     @job.save
 
+    UserMailer.job("accepted", "customer", @job)
+
     redirect_to contractor_path(params[:contractor_id])
   end
 
   def finish
     @job = Job.find(params[:id])
+
+    UserMailer.job("closed", "customer", @job)
 
     if @job.contractor == current_contractor
       @job.finished = true

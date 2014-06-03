@@ -52,6 +52,8 @@ class UserMailer < ActionMailer::Base
         
 
       when "accepted"
+
+      when "created"
         
       end
 
