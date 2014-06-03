@@ -2,7 +2,6 @@
   <div class="col-sm-3 col-xs-6 col-xs-offset-3 col-sm-offset-0 text-center job-choice">
 
     <%= f.button name: "network_id", value: network.id, class: "" do %>
-    	<%= image_tag network.avatar.url(:medium) %>
     	<span class="btn btn-primary"><%= network.name %></span>
     <% end %>
   </div>

@@ -1,11 +1,11 @@
 <div class="job-list-item <% if half %>col-md-6 col-sm-6<% else %>col-md-3 col-sm-4<% end %> col-xs-12">
-  
+
   <%= link_to job_path(job_list_item) do %>
-    <%= image_tag("#{job_list_item.model.name.downcase}.png") %>
+    <%= image_tag("devices/#{job_list_item.model.name.downcase}.png") %>
     <div class="job-list-item-meta">
         <p class="job-list-item-name"><%= job_list_item.model.name %></p>
-      
-        
+
+
         <p class="job-list-item-problem"><%= job_list_item.problem.name %></p>
         <p class="job-list-item-city"><%= job_list_item.location.city.capitalize %></p>
     </div>

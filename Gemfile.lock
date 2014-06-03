@@ -193,7 +193,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mandrill-api
-  paperclip (~> 4.1)
+  paperclip
   pg
   pry-rails
   rails (= 4.0.0)

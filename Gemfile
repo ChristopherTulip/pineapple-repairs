@@ -17,8 +17,7 @@ gem 'figaro' # for environment variables
 
 gem 'devise'
 gem 'gravtastic'
-gem "paperclip", "~> 4.1"
-
+gem 'paperclip'
 group :development do
   gem 'jbuilder', '~> 1.2'
   gem 'pry-rails'
