@@ -12,29 +12,40 @@
            </h1>
         </div>
 
-      <div class="col-xs-9 col-xs-offset-4">
+      <div class="col-xs-9 col-xs-offset-3">
 
         <!-- NAV MENU -->
         <div class="menus" id="myScrollspy">
-          <ul class="nav scroll-nav">
-            <%= nav_link("Home", root_path) %>
-            
-            
-            <%= nav_link("Repairs", repairs_path) %>
-            <%= nav_link("About Us", about_path) %>
+          <nav class="navbar" role="navigation">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+              <span class="icon-oxp-nav"></span>
+            </button>
 
-            <% if contractor_signed_in? %>
-              <li>
-              <%= link_to destroy_contractor_session_path, method: :delete do %>
-                Logout
-              <% end %>
-            </li>
-              <%= nav_link("Account", contractor_path(current_contractor)) %>
-            <% else %>
-              <%= nav_link("On Demand", jobs_path(restart: true)) %>
-              <%= nav_link("Contractor Login", new_contractor_session_path) %>
-            <% end %>
-          </ul>
+            <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
+              <ul class="list-inline nav navbar-nav">
+               <!-- <%= nav_link("Home", root_path) %>-->
+            
+            
+                <%= nav_link("Repairs", repairs_path) %>
+                <%= nav_link("About Us", about_path) %>
+
+                <% if contractor_signed_in? %>
+                  <li>
+                  <%= link_to destroy_contractor_session_path, method: :delete do %>
+                    Logout
+                  <% end %>
+                </li>
+                  <%= nav_link("Account", contractor_path(current_contractor)) %>
+                <% else %>
+                  <%= nav_link("On Demand", jobs_path(restart: true)) %>
+                  <%= nav_link("Login", new_contractor_session_path) %>
+                <% end %>
+              </ul>
+            </div>
+          </nav>
+          <!-- <ul class="nav scroll-nav navbar">
+            
+          </ul> -->
         </div>
 
       </div>

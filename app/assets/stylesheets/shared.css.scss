@@ -65,6 +65,28 @@ body {
 	}
 }
 
+@media only screen and (max-width: 768px) {
+	.about {
+		img {
+			width: 100%;
+			float: none;
+			margin: 0 0 50px 0;
+		}
+	}
+
+	
+}
+
+@media only screen and (max-width: 991px) {
+	.option {
+		margin-bottom: 50px;
+
+		&.last {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .account {
 	 h2 {
     font-size: 3.25em;
@@ -113,6 +135,10 @@ body {
 	}
 }
 
+
+
+
+
 .section-white {
 	background-color: #fafafa;
 	a {
@@ -121,7 +147,7 @@ body {
 }
 
 .feature {
-
+	margin-bottom: 30px;
 }
 
 .section-light-grey {

@@ -51,9 +51,10 @@
 /*Phone*/
 @media (max-width: 767px) {
 	#header-landing #logo{
-		position: relative;
+		z-index: 10;
+	/*	position: relative;
 		display: block;
-		text-align: center;
+		text-align: center;*/
 	}
 	#nav-menu .menus{
 		float: none;
@@ -69,7 +70,7 @@
 	}
 	#header-landing .awesome-slogan h2{font-size: 40px;}
 	#header-landing .awesome-slogan h4{font-size: 20px;}
-	.section-page-landing .inner-section{padding: 125px 0;}
+	.section-page-landing .inner-section{padding: 100px 0 50px 0;}
 	.portfolio-landing .nav li{margin-bottom: 0px;}
 	.portfolio-landing #portfolio-grid .mix{
 		width: 50%;

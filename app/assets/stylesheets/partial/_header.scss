@@ -1,5 +1,3 @@
-#header-landing {
-}
 
 #nav-menu {
 	position: absolute;
@@ -44,7 +42,7 @@
 					border-radius: 0 !important;
 					padding-top: 0 !important;
 					padding-bottom: 0 !important;
-					padding: 0 25px !important;
+					padding: 0 20px !important;
 					text-transform: uppercase;
 
 					&:hover {
@@ -64,7 +62,40 @@
 				}
 			}
 		}
+	} // .menus
 
-		
+	
+}
+
+@media only screen and (max-width: 768px) {
+	#nav-menu {
+		.navbar-collapse {
+			position: absolute;
+			right: 0;
+			top: 65px;
+			background-color: #fff;
+			ul {
+				li {
+					display: block;
+					width: 250px;
+				}
+			}
+		}
+	}
+	.navbar-toggle {
+		margin: 0;
+		height: 65px;
+
+		span {
+			font-size: 2em;
+			color: $brand-color;
+			position: relative;
+			bottom: 8px;
+		}
 	}
 }
+
+
+
+
+

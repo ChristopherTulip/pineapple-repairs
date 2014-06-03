@@ -17,25 +17,25 @@ class UserMailer < ActionMailer::Base
   private
 
   def create_template_content (type, recipient, job, contractor = nil)
-
+    binding.pry
     # consistent across all messages
     template_content = [
       
       {
         name: "phone_number",
-        content: "#{job.phone_number}"
+        content: "#{job.pretty_phone_number}"
       },
       {
         name: "model",
-        content: "#{job.model}"
+        content: "#{job.model.name}"
       },
       {
         name: "network",
-        content: "#{job.network}"
+        content: "#{job.network.name}"
       },
       {
         name: "problem",
-        content: "#{job.problem}"
+        content: "#{job.problem.name}"
       }
     ]
 

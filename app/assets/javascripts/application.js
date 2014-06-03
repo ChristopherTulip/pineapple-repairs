@@ -7,6 +7,7 @@
 //= require jquery_plugins/jquery.smooth-scroll
 //= require jquery_plugins/jquery.vegas
 
+
 //= require bootstrap
 //= require bootstrapValidator
 
