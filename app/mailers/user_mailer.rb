@@ -17,10 +17,9 @@ class UserMailer < ActionMailer::Base
   private
 
   def create_template_content (type, recipient, job, contractor = nil)
-    binding.pry
     # consistent across all messages
     template_content = [
-      
+
       {
         name: "phone_number",
         content: "#{job.pretty_phone_number}"
@@ -49,12 +48,12 @@ class UserMailer < ActionMailer::Base
 
       case type
       when "created"
-        
+
 
       when "accepted"
 
       when "created"
-        
+
       end
 
 
@@ -63,7 +62,7 @@ class UserMailer < ActionMailer::Base
         name: "contractor_name",
         content: "#{contractor.name}"
       }
-      
+
       case type
       when "created"
         template_content << {
@@ -72,7 +71,7 @@ class UserMailer < ActionMailer::Base
         }
 
       when "accepted"
-        
+
       end
     end
 
@@ -81,7 +80,7 @@ class UserMailer < ActionMailer::Base
 
   def create_message (type, recipient, job, contractor = nil)
     case recipient
-    
+
     when "customer"
       return message = {
         to: [
