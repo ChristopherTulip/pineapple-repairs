@@ -19,6 +19,7 @@ body {
 	p {
 		font-size: 1.5em;
 		line-height: 1.5em;
+		font-weight: 300
 	}
 
 	.container {
@@ -74,7 +75,7 @@ body {
 		}
 	}
 
-	
+
 }
 
 @media only screen and (max-width: 991px) {
@@ -452,7 +453,7 @@ footer {
   			border-right: none;
   		}
   	}
-  }  
+  }
 } // .sub-nav
 
 .list-inline {
@@ -470,13 +471,18 @@ footer {
 }
 
 .job-progress {
-	margin-top: 30px;
+	margin: 20px 0;
 
 	overflow: auto;
 
 	.step-name {
 		margin-right: 5px;
 	}
+
+	.carat {
+		margin-left: 10px;
+	}
+
 
 	@media only screen and (max-width: 768px) {
 		.progress-title {
@@ -485,6 +491,11 @@ footer {
 			}
 		}
 	}
+}
+
+.divider {
+	border-color: $brand-color;
+	margin: 0;
 }
 
 .job-choices {
@@ -572,4 +583,8 @@ footer {
 	&.error {
 		background-color: $coa-color;
 	}
+}
+
+.normal-form {
+	background-color: #eee;
 }
