@@ -2,10 +2,10 @@ PineappleRepairs::Application.routes.draw do
 
   devise_for :contractors, :controllers => { :registrations => "registrations"}
 
-  resources :problem, only: [:new, :edit, :create, :update]
-  resources :models, only: [:new, :edit, :create, :update]
-  resources :devices, only: [:new, :edit, :create, :update, :index]
-  resources :networks, only: [:new, :edit, :create, :update]
+  # resources :problem, only: [:new, :edit, :create, :update]
+  # resources :models, only: [:new, :edit, :create, :update]
+  # resources :devices, only: [:new, :edit, :create, :update, :index]
+  # resources :networks, only: [:new, :edit, :create, :update]
 
   resources :jobs, only: [:new, :create] do
     collection do
@@ -41,6 +41,8 @@ PineappleRepairs::Application.routes.draw do
   get "/contact",  to: "pages#contact"
   get "/about",    to: "pages#about"
   get "/repairs",  to: "devices#index"
+  get "/diy",      to: "pages#diy"
+  get "/mail-in",  to: "pages#mail_in"
 
   root 'pages#index'
 end

@@ -15,6 +15,7 @@ body {
 
 .body-content {
 	font-family: Helvetica, sans-serif;
+	padding-top: 30px;
 
 	p {
 		font-size: 1.5em;
@@ -167,6 +168,36 @@ body {
 	}
 }
 
+.section-blue {
+	background-color: $brand-color !important;
+
+	.autocomplete-form {
+		color: #222 !important;
+		margin: 30px 0;
+
+		.autocomplete {
+			width: 60%;
+			height: 50px;
+			margin-right: 20px;
+		}
+
+		.btn-autocomplete {
+			margin: 0;
+			margin-left: 20px;
+			width: 35%;
+		}
+	}
+
+
+	a {
+		text-shadow: 1px 1px rgba(0,0,0,0.1);
+	}
+	p {
+		font-weight: 300;
+	}
+}
+
+
 .section-transparent {
 	background-color: transparent;
 
@@ -176,7 +207,7 @@ body {
 }
 
 .wrapper {
-	background-image: image-url('banner.jpg');
+	background-image: image-url('banner.png');
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
@@ -496,6 +527,7 @@ footer {
 .divider {
 	border-color: $brand-color;
 	margin: 0;
+	border-top-width: 2px;
 }
 
 .job-choices {
@@ -572,10 +604,10 @@ footer {
 }
 
 .flash {
-	background-color: #1cb1d0;
+	background-color: $brand-color;
 	color: white;
 	height: 65px;
-	top: 65px;
+	top: 95px;
 	position: absolute;
 	z-index: 10;
 	width: 100%;

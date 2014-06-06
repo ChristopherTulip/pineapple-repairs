@@ -1,5 +1,15 @@
 <!-- SECTION SERVICES -->
-<div class="section-page-landing section-grey" id="repairs">
+<div class="section-page-landing" id="repairs">
+  <div class="container">
+    <h2 class="text-center">Recieve A Repair Quote in Minutes</h2>
+    <div class="col-sm-4"><p>1. Enter Your Location</p></div>
+    <div class="col-sm-4"><p>2. Choose Device and Issue</p></div>
+    <div class="col-sm-4"><p>3. Talk to Your Local Tech</p></div>
+    <div></div>
+    <hr/>
+  </div>
+</div>
+<div class="section-page-landing" id="repairs">
   <div class="inner-section">
     <div class="container">
       <h2 class="text-center">What's Broken?</h2>
@@ -15,7 +25,7 @@
             <div class="col-sm-4 device">
               <%= f.button :submit, name: "device_id", value: device.id do %>
                 <%= image_tag "devices/#{device.name.downcase}.png" %>
-                <span class="btn btn-primary"><%= device.name %></span>
+                <span class="btn btn-default"><%= device.name %></span>
               <% end %>
             </div>
           <% end %>

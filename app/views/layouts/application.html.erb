@@ -31,27 +31,13 @@
       <%= render "shared/menu" %>
     </header>
 
-    <% if content_for?(:banner) %>
-      <div class="banner">
-        <div id="banner" class="awesome-slogan">
-          <%= yield(:banner) %>
-        </div>
+    <div class="wrapper">
+      <div class="body-content">
+        <%= yield %>
       </div>
-    <% end %>
+    </div>
 
-    <% if content_for?(:subnav) %>
-      <nav class="sub-nav">
-        <div class="row text-center">
-          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-            <ul class="list-inline">
-              <%= yield(:subnav) %>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <% end %>
 
-    <%= yield %>
     <%= render "shared/footer" %>
   </body>
 </html>

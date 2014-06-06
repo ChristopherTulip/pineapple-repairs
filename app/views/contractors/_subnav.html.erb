@@ -1,6 +1,12 @@
-<% content_for(:subnav) do %>
-  <li><%= link_to "Available", available_contractor_jobs_path(current_contractor) %></li>
-  <li><%= link_to "Current", current_contractor_jobs_path(current_contractor) %></li>
-  <li><%= link_to "Finished", finished_contractor_jobs_path(current_contractor) %></li>
-  <li><%= link_to "Contractors", contractors_path %></li>
-<% end %>
+<nav class="sub-nav">
+  <div class="row text-center">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+      <ul class="list-inline">
+        <li><%= link_to "Available", available_contractor_jobs_path(current_contractor) %></li>
+        <li><%= link_to "Current", current_contractor_jobs_path(current_contractor) %></li>
+        <li><%= link_to "Finished", finished_contractor_jobs_path(current_contractor) %></li>
+        <li><%= link_to "Contractors", contractors_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

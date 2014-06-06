@@ -1,7 +1,6 @@
 
 #nav-menu {
 	position: absolute;
-	background-color: rgba(0,0,0,.1);
 	height: 65px;
 	padding: 0;
 	line-height: 65px;
@@ -10,17 +9,23 @@
 	#logo {
 		padding: 0;
 		height: 100%;
+
 		a {
+			color: white;
 			font-size: .8em;
 			line-height: 65px;
+			float: left;
+			font-size: 25px;
+
+			&:hover {
+				color: white;
+			}
 		}
 
 		img {
-			width: 50px;		
+			width:  65px;
 			margin-right: 5px;
-		//background-color: #fff;
-		//border-radius: 50px;
-
+			margin-top: -8px;
 		}
 	}
 
@@ -64,11 +69,15 @@
 		}
 	} // .menus
 
-	
+	.navbar {
+		border: none;
+	}
+
 }
 
 @media only screen and (max-width: 768px) {
 	#nav-menu {
+
 		.navbar-collapse {
 			position: absolute;
 			right: 0;

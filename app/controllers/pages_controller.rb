@@ -7,4 +7,10 @@ class PagesController < ApplicationController
   def about
   end
 
+  def diy
+  end
+
+  def mail_in
+  end
+
 end

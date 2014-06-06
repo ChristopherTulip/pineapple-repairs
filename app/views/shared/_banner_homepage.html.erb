@@ -1,27 +1,38 @@
 <div class="banner homepage">
-  <!-- HEADER SECTION CONTENT -->
-  <div class="shade">
 
-  </div>
-  <div id="banner" class="awesome-slogan">
+  <div id="banner" class="awesome-slogan container">
     <h2>
-      We Can <span>Fix</span> That!
+      Don't Pine Over <br/> Your Apple Products
     </h2>
     <h4>
-      Don't <span>Pine</span> Over Your <span>Broken Products</span>
+      A Technician will meet you at a location of <br/>
+      your choice to repair your apple and non apple devices
     </h4>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
-          <%= link_to "#repairs" do %>
-            <button class="btn btn-primary">
-              Get Your Phone Fixed Faster!
-              <span class="icon-arw-down">&#10148;</span>
-            </button>
-          <% end %>
-        </div>
-      </div>
-    </div>
   </div>
-  <!-- END HEADER SECTION CONTENT -->
 </div>
+<!-- SECTION SERVICES -->
+<div class="section-page-landing section-blue" id="location">
+
+    <div class="container">
+
+      <%= form_for Job.new, html: { class: "autocomplete-form" } do |f| %>
+
+        <p>Repair My Device!</p>
+        <%= text_field_tag "", nil, class: 'autocomplete' %>
+
+        <%= f.fields_for :location do |location| %>
+          <%= location.hidden_field :city,  class: 'city-field' %>
+          <%= location.hidden_field :country, class: 'country-field' %>
+        <% end %>
+
+        <%= f.submit "Request A Quote", class: "btn btn-primary btn-autocomplete" %>
+
+        <%= hidden_field_tag "restart", "true" %>
+      <% end %>
+    </div>
+
+</div>
+<!-- END SECTION SERVICES -->
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+

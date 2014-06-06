@@ -21,6 +21,10 @@ class JobsController < ApplicationController
 
     @job.next_state params[:back]
 
+    if @job.current_step == "device" && @job.device_id.present? && !params[:back]
+      @job.next_state params[:back]
+    end
+
     @data = @job.data_for_step @job.device_id
 
     if !@job.new_record?
@@ -110,6 +114,10 @@ private
     when "problem"
       job.problem_id = params[:problem_id]
     when "location"
+      if params[:device_id].present?
+        job.device_id = params[:device_id]
+      end
+
       if params[:job] && params[:job][:location].present?
         location = Location.where( city: params[:job][:location][:city].downcase )
 

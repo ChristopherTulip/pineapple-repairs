@@ -4,12 +4,10 @@
   <div class="container">
     <div class="row">
         <div id="logo">
-          <h1>
-            <a href="/">
-              <%= image_tag("logo-trans.png") %>
-              PineappleRepairs.
-           </a>
-           </h1>
+          <a href="/">
+            <%= image_tag("logo-trans.png") %>
+            PineappleRepairs.
+          </a>
         </div>
 
       <div class="col-xs-9 col-xs-offset-3">
@@ -24,26 +22,26 @@
             <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
               <ul class="list-inline nav navbar-nav">
                <!-- <%= nav_link("Home", root_path) %>-->
-            
-            
+
+
                 <%= nav_link("Repairs", repairs_path) %>
                 <%= nav_link("About Us", about_path) %>
 
                 <% if contractor_signed_in? %>
                   <li>
-                  <%= link_to destroy_contractor_session_path, method: :delete do %>
-                    Logout
-                  <% end %>
-                </li>
+                    <%= link_to destroy_contractor_session_path, method: :delete do %>
+                      Logout
+                    <% end %>
+                  </li>
                   <%= nav_link("Account", contractor_path(current_contractor)) %>
                 <% else %>
                   <%= nav_link("On Demand", jobs_path(restart: true)) %>
-                                  <% end %>
+                <% end %>
               </ul>
             </div>
           </nav>
           <!-- <ul class="nav scroll-nav navbar">
-            
+
           </ul> -->
         </div>
 

@@ -13,7 +13,7 @@ PineappleRepairs::Application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-
+  config.serve_static_assets = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

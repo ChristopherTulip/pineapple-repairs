@@ -17,7 +17,7 @@ describe Job do
 
   describe "steps" do
     it "should return a list of steps" do
-      expect(job.steps).to eq(%w[ device model network problem location contact ])
+      expect(job.steps).to eq(%w[ location device model network problem contact ])
     end
   end
 
@@ -35,35 +35,30 @@ describe Job do
     let!(:network2) { create(:network) }
     let!(:network3) { create(:network) }
 
-    it "should return devices on the first step" do
+    it "should return devices on the device step" do
+      job.current_step = "device"
       expect(job.data_for_step(nil)).to eq([device1, device2])
     end
 
     it "should return models on the second step" do
-      job.next_step
+      job.current_step = "model"
       expect(job.data_for_step(1)).to eq([model1, model2])
     end
 
     it "should return problems on the third step" do
-      2.times do
-        job.next_step
-      end
+      job.current_step = "problem"
 
       expect(job.data_for_step(1)).to eq([network1, network2, network3])
     end
 
     it "should return problems on the third step" do
-      3.times do
-        job.next_step
-      end
+      job.current_step = "problems"
 
       expect(job.data_for_step(1)).to eq([problem1, problem2, problem3])
     end
 
-    it "should return an empty array on the fourth step" do
-      4.times do
-        job.next_step
-      end
+    it "should return an empty array on any other step" do
+      job.current_step = "asdf"
 
       expect(job.data_for_step(1)).to eq([])
     end
