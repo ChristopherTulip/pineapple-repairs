@@ -14,8 +14,7 @@ body {
 }
 
 .body-content {
-	font-family: Helvetica, sans-serif;
-	padding-top: 30px;
+	font-family: 'Open Sans', sans-serif;
 
 	p {
 		font-size: 1.5em;
@@ -109,13 +108,16 @@ body {
 	text-align: center;
 
 
+	&.jobs-new {
+		padding-top: 150px;
+	}
+
 	h2 {
 		letter-spacing: .8px;
 		font-weight: 700;
 		margin-bottom: 40px;
 		margin-top: 0;
 		font-size: 2.75em;
-		text-transform: uppercase;
 
 		&.has-sub {
 			margin-bottom: 10px
@@ -251,22 +253,6 @@ body {
 		}
 
 		color: $brand-color;
-
-		.btn {
-			background-color: lighten($coa-color, 8%);
-			box-shadow: 0 0 10px rgba(0,0,0,.2);
-			border-bottom: 3px solid darken($coa-color, 5%);
-			color: #fff;
-		}
-	}
-
-	&:active {
-		.btn {
-			background-color: lighten($coa-color, 8%);
-			border-bottom: none;
-			border-top: 3px solid darken($coa-color, 8%);
-			text-shadow: 0 -1px rgba(0,0,0,.2);
-		}
 	}
 }
 
@@ -431,7 +417,6 @@ footer {
   background-color: $brand-color;
   height: 60px;
   line-height: 60px;
-  text-transform: uppercase;
 
   .row, ul, li {
     height: 100%;
@@ -612,7 +597,6 @@ footer {
 	}
 
 	.heading {
-		text-transform: uppercase;
 	}
 	.meta {
 
@@ -651,8 +635,19 @@ i.fa-2 {
 .row.quote {
 	padding: 40px 0;
 	border-bottom: 2px solid #eee;
+	text-align: center;
 }
 
 .spaced {
 	padding-top: 20px;
+}
+
+.map {
+
+	background-color: $map-color;
+	background: url(image_path("map-of-vancouver.jpg"));
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	min-height: 500px;
 }

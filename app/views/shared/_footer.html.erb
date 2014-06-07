@@ -3,70 +3,42 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-sm-4">
-        <h5>ABOUT US</h5>
+        <h5>Company</h5>
+        <%= link_to "About Us", about_path %><br/>
+        <% if current_contractor.nil? %>
+            <%= link_to "Technical Login", contractor_session_path %><br/>
+            <%= link_to "We're Hiring", new_contractor_registration_path %><br/>
+        <% else %>
+            <%= link_to "Available Jobs", contractor_path(current_contractor) %><br/>
+            <%= link_to destroy_contractor_session_path, method: :delete do %>
+              Logout
+            <% end %><br/>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h5>Store Hours</h5>
         <p>
-          It all started with a fall on some black ice. Screen cracked, and LCD below, I was iPhone less, a feeling akin to being shoeless - everything was a little harder. Just one month after starting at SFU my connection to figuring out how to get around the campus, and organize my day was all gone, I found myself wondering...
-          <br />
-          <%= link_to "Read more", about_path %>
+          Mon - Fri 11am - 6pm<br />
+          Saturday  11am - 4pm<br />
+          Sunday    Closed
         </p>
       </div>
       <div class="col-sm-4">
-        <h5>NAV MENUS</h5>
-        <ul>
-          <li>
-            <%= link_to "Search", root_path(anchor: 'search') %>
-          </li>
-          <li>
-            <%= link_to "Features", root_path(anchor: 'features') %>
-          </li>
-          <li>
-            <%= link_to "Our Services", root_path(anchor: 'services') %>
-          </li>
-          <li>
-            <%= link_to "Find Us", root_path(anchor: 'find-us') %>
-          </li>
-          <% if current_contractor.nil? %>
-            <li>
-              <%= link_to "Sign In", contractor_session_path %>
-            </li>
-            <li>
-              <%= link_to "Sign Up", new_contractor_registration_path %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Available Jobs", contractor_path(current_contractor) %>
-            </li>
-            <li>
-              <%= link_to destroy_contractor_session_path, method: :delete do %>
-                Logout
-              <% end %>
-            </li>
-          <% end %>
-          <li>
-            
-          </li>
-        </ul>
-      </div>
-      <div class="col-sm-4">
-        <h5>OUR LOCATION</h5>
+        <h5>Store Location</h5>
         <address>
           <strong>Pineapple Repairs</strong><br>
           Waterfront Station<br>
           25-601 West Cordova Street<br>
           Vancouver, BC, Canada<br>
           Toll Free: 1 (888) 5 REPAIR<br>
-          Main Line: 778 889 7642
-        </address>
-
-        <address>
-          <strong>Email : </strong>
-          <a href="mailto:pineapplerepairs@gmail.com">pineapplerepairs@gmail.com</a>
+          Main Line: 778 889 7642<br>
+          <a href="mailto:pineapplerepairs@gmail.com">PineappleRepairs@gmail.com</a>
         </address>
       </div>
     </div>
     <div class="copyright row">
       <div class="col-xs-12">
-        &copy; <%= Time.now().year %> <%= link_to "Pineapple Repairs", root_path %>
+        &copy; 2011 - <%= Time.now().year %> <%= link_to "Pineapple Repairs", root_path %>
       </div>
     </div>
   </div>
