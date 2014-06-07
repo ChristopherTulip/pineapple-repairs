@@ -101,7 +101,6 @@ class UserMailer < ActionMailer::Base
         message = { to: [] }
 
         @contractors.each do |contractor|
-          binding.pry
           if contractor.present?
             message[:to] << {
               email: "#{contractor.email}",
