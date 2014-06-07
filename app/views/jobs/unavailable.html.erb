@@ -1,8 +1,12 @@
-<%= content_for(:banner) do %>
-  <h2>
-  	We Aren't In Your Area!
-  </h2>
-<% end %>
-
-<%= render "/jobs/more_options" %>
+<%= render partial: '/shared/banner', locals: { title: "We Aren't In Your Area!"} %>
+<div class="section-page-landing">
+  <div class="inner-section">
+    <div class="container">
+      <h2 class="text-center">Sorry About That!</h2>
+      <p>
+        We're working hard to get all over North America but haven't gotten into your location yet.
+      </p>
+    </div>
+  </div>
+</div>
 
