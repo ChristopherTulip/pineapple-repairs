@@ -40,14 +40,21 @@
 		z-index: 2;
 
 		h2, h4 {
+			margin: 0;
+
 			span {
 				text-decoration: line-through;
 			}
 		}
+		h4 {
+			font-size: 20px;
+			font-weight: 300;
+		}
+
 		h2 {
 			margin-top: 0;
 			font-weight: 700;
-			font-size: 5em;
+			font-size: 45px;
 			letter-spacing: .5px;
 			span {
 
