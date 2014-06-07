@@ -28,14 +28,15 @@
                 <%= nav_link("About Us", about_path) %>
 
                 <% if contractor_signed_in? %>
+                  <%= nav_link("Account", contractor_path(current_contractor)) %>
                   <li>
                     <%= link_to destroy_contractor_session_path, method: :delete do %>
                       Logout
                     <% end %>
                   </li>
-                  <%= nav_link("Account", contractor_path(current_contractor)) %>
                 <% else %>
                   <%= nav_link("On Demand", jobs_path(restart: true)) %>
+                  <%= nav_link("We're Hiring!", new_contractor_registration_path) %>
                 <% end %>
               </ul>
             </div>
