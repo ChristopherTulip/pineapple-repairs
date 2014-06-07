@@ -33,7 +33,7 @@
 }
 
 .btn-default {
-	@include style-buttons($brand-color, white, white);
+	@include style-buttons($brand-color, $light-blue-color, white);
 }
 
 .btn-autocomplete {
