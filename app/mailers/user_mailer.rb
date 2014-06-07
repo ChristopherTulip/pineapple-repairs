@@ -58,11 +58,12 @@ class UserMailer < ActionMailer::Base
 
 
     when "contractor"
-      template_content << {
-        name: "contractor_name",
-        content: "#{contractor.name}"
-      }
-
+      if contractor.present?
+        template_content << {
+          name: "contractor_name",
+          content: "#{contractor.name}"
+        }
+      end
       case type
       when "created"
         template_content << {
@@ -100,11 +101,14 @@ class UserMailer < ActionMailer::Base
         message = { to: [] }
 
         @contractors.each do |contractor|
-          message.to << {
-            email: "#{contractor.email}",
-            name: "#{contractor.name}",
-            type: "to"
-          }
+          binding.pry
+          if contractor.present?
+            message[:to] << {
+              email: "#{contractor.email}",
+              name: "#{contractor.name}",
+              type: "to"
+            }
+          end
         end
 
         return message

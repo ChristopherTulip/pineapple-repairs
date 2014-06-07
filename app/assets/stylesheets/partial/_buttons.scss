@@ -46,3 +46,13 @@
 
 	@include style-buttons($brand-color);
 }
+
+.btn-autocomplete {
+	@include style-buttons($darker-brand-color);
+
+	&.btn-green {
+		@include style-buttons($darker-green-color);
+	}
+}
+
+

@@ -219,7 +219,7 @@ body {
 }
 
 .section-green {
-		background-color: #6dc645 !important;
+		background-color: $green-color !important;
 }
 .section-transparent {
 	background-color: transparent;
@@ -270,8 +270,6 @@ body {
 	}
 }
 
-
-
 .job-choice, .devices {
 	button {
 
@@ -280,14 +278,10 @@ body {
 		background-color: transparent;
 		color: #fff;
 		border: none;
-
-
 	}
 
 	.device {
 		text-align: center;
-
-
 	}
 	img {
 		height: 200px;
