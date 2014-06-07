@@ -2,7 +2,7 @@
 
   <div id="banner" class="awesome-slogan container">
     <h2>
-      Don't Pine Over <br/> Your Apple Products
+      Don't Pine Over <br/> Your <span>Apple</span> Products
     </h2>
     <h4>
       A Technician will meet you at a location of <br/>
@@ -10,29 +10,4 @@
     </h4>
   </div>
 </div>
-<!-- SECTION SERVICES -->
-<div class="section-page-landing section-blue" id="location">
-
-    <div class="container">
-
-      <%= form_for Job.new, html: { class: "autocomplete-form" } do |f| %>
-
-        <p>Repair My Device!</p>
-        <%= text_field_tag "", nil, class: 'autocomplete' %>
-
-        <%= f.fields_for :location do |location| %>
-          <%= location.hidden_field :city,  class: 'city-field' %>
-          <%= location.hidden_field :country, class: 'country-field' %>
-        <% end %>
-
-        <%= f.submit "Request A Quote", class: "btn btn-primary btn-autocomplete" %>
-
-        <%= hidden_field_tag "restart", "true" %>
-      <% end %>
-    </div>
-
-</div>
-<!-- END SECTION SERVICES -->
-
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
