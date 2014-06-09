@@ -643,16 +643,16 @@ i.fa-2 {
 }
 
 .map {
-
-	background-color: $map-color;
 	background: url(image_path("map-of-vancouver.jpg"));
 	background-repeat:no-repeat;
 	background-position:center;
+	background-size: 100%;
 	min-height: 500px;
 }
 .car {
 	background: url(image_path("car-image.png"));
 	background-repeat:no-repeat;
 	background-position:center;
+	background-size: 100%;
 	min-height: 368px;
 }
