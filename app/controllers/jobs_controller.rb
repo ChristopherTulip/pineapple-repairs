@@ -86,7 +86,7 @@ class JobsController < ApplicationController
   end
 
   def available
-    @jobs = Job.available
+    @jobs = Job.available.where(location: current_contractor.location)
 
     @title = "available"
 

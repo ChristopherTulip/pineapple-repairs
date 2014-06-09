@@ -15,11 +15,11 @@ class Contractor < ActiveRecord::Base
   validates :location_id, presence: true
 
   def unfinished_jobs
-    jobs.where(finished: false)
+    jobs.where(finished: false).where(location: location)
   end
 
   def finished_jobs
-    jobs.where(finished: true)
+    jobs.where(finished: true).where(location: location)
   end
 
   def can_close? job
