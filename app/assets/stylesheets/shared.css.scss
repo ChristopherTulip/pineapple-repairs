@@ -646,13 +646,15 @@ i.fa-2 {
 	background: url(image_path("map-of-vancouver.jpg"));
 	background-repeat:no-repeat;
 	background-position:center;
-	background-size: 100%;
 	min-height: 500px;
+
+	@media only screen and (min-width: 1280px) {
+		background-size: 100%;
+	}
 }
 .car {
 	background: url(image_path("car-image.png"));
 	background-repeat:no-repeat;
 	background-position:center;
-	background-size: 100%;
 	min-height: 368px;
 }
