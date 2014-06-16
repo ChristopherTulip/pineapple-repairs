@@ -1,48 +1,43 @@
+<div class="inner-section">
+  <h2>We're Hiring!</h2>
 
-<h2>Sign up</h2>
+  <h4>
+    At Pineapple Repairs we're always looking to grow our workforce of talented contractors. Fill out the form below, you'll show up in our system and we'll be in touch about getting you some work!
+  </h4>
 
-<h4>
-  At Pineapple Repairs we're always looking to grow our workforce of talented contractors. Fill out the form below, you'll show up in our system and we'll be in touch about getting you some work!
-</h4>
+  <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: "normal-form"} do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: "normal-form"} do |f| %>
-  <%= devise_error_messages! %>
+    <div class="form-row">
+  	  <%= f.text_field :name, autofocus: true, required: true, placeholder:"Name" %>
+  	</div>
 
-  <div class="form-row">
-	  <%= f.text_field :name, autofocus: true, required: true, placeholder:"Name" %>
-	</div>
+    <div class="form-row">
+  	  <%= f.email_field :email, required: true, placeholder:"Email Address" %>
+  	</div>
 
-  <div class="form-row">
-	  <%= f.email_field :email, required: true, placeholder:"Email Address" %>
-	</div>
+    <div class="form-row">
+      <%= f.password_field :password, autocomplete: "off", required: true, placeholder: "Password" %>
+    </div>
 
-  <div class="form-row">
-    <%= f.password_field :password, autocomplete: "off", required: true, placeholder: "Password" %>
-  </div>
+    <div class="form-row">
+      <%= f.text_field :phone_number, required: true, placeholder: "Phone Number" %>
+    </div>
 
-  <div class="form-row">
-    <%= f.text_field :phone_number, required: true, placeholder: "Phone Number" %>
-  </div>
+    <div class="form-row">
+      <%= text_field_tag "", nil, class: 'autocomplete', required: true %>
+      <%= f.fields_for :location do |location| %>
+        <%= location.hidden_field :city,  class: 'city-field' %>
+        <%= location.hidden_field :country,  class: 'country-field' %>
+      <% end %>
+    </div>
 
-  <div class="form-row">
-    <%= text_field_tag "", nil, class: 'autocomplete', required: true %>
-    <%= f.fields_for :location do |location| %>
-      <%= location.hidden_field :city,  class: 'city-field' %>
-      <%= location.hidden_field :country,  class: 'country-field' %>
-    <% end %>
-  </div>
+    <div class="button-row">
+    	<%= f.submit "Sign up", class: "btn btn-primary" %>
+    </div>
+  <% end %>
 
-  <!-- <div class="link-row">
-    <a href="" data-template="location_field">Add another Location</a>
-  </div> -->
+  <%= render "devise/shared/links" %>
 
-
-
-  <div class="button-row">
-  	<%= f.submit "Sign up", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+</div>

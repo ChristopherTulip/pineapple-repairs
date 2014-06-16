@@ -1,49 +1,44 @@
-<!-- NAV MENU WRAPPER FOR FIXED POSITION -->
+
 <div id="nav-menu">
-  <!-- NAV MENU CONTAINER -->
-  <div class="container">
-    <div class="row">
-        <div id="logo">
-          <a href="/">
-            <%= image_tag("logo-(1).png") %>
-          </a>
-        </div>
-
-      <div class="col-xs-9 col-xs-offset-3">
-
-        <!-- NAV MENU -->
-        <div class="menus" id="myScrollspy">
-          <nav class="navbar" role="navigation">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-              <span class="icon-oxp-nav"></span>
-            </button>
-
-            <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
-              <ul class="list-inline nav navbar-nav">
-               <!-- <%= nav_link("Home", root_path) %>-->
+  <div id="logo">
+    <a href="/">
+      <%= image_tag("logo-matt.png") %>
+    </a>
+  </div>
+  <div class="row">
 
 
-                <%= nav_link("Repairs", repairs_path) %>
-                <%= nav_link("About Us", about_path) %>
+    <div class="col-xs-9 col-xs-offset-3">
 
-                <% if contractor_signed_in? %>
-                  <%= nav_link("Account", contractor_path(current_contractor)) %>
-                  <li>
-                    <%= link_to destroy_contractor_session_path, method: :delete do %>
-                      Logout
-                    <% end %>
-                  </li>
-                <% else %>
-                  <%= nav_link("On Demand", jobs_path(restart: true)) %>
-                  <%= nav_link("We're Hiring!", new_contractor_registration_path) %>
-                <% end %>
-              </ul>
-            </div>
-          </nav>
-          <!-- <ul class="nav scroll-nav navbar">
+      <!-- NAV MENU -->
+      <div class="menus" id="myScrollspy">
+        <nav class="navbar" role="navigation">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+            <span class="icon-oxp-nav"></span>
+          </button>
 
-          </ul> -->
-        </div>
+          <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
+            <ul class="list-inline nav navbar-nav">
+             <!-- <%= nav_link("Home", root_path) %>-->
+
+
+              <%= nav_link("Repairs", repairs_path) %>
+              <%= nav_link("About Us", about_path) %>
+
+              <% if contractor_signed_in? %>
+                <%= nav_link("Account", contractor_path(current_contractor)) %>
+                <li>
+                  <%= link_to destroy_contractor_session_path, method: :delete do %>
+                    Logout
+                  <% end %>
+                </li>
+              <% else %>
+                <%= nav_link("On Demand", jobs_path(restart: true)) %>
+                <%= nav_link("We're Hiring!", new_contractor_registration_path) %>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
 
       </div>
 

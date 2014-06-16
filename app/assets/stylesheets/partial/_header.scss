@@ -3,7 +3,13 @@
 	position: absolute;
 	height: 55px;
 	padding: 0;
-	line-height: 55px;
+	line-height: 50px;
+
+	.row {
+		margin-left: 350px;
+		background-color: $brand-color;
+		height: 50px;
+	}
 
 	#logo {
 		padding: 0;
@@ -12,7 +18,7 @@
 		a {
 			color: white;
 			font-size: .8em;
-			line-height: 55px;
+			line-height: 50px;
 			float: left;
 			font-size: 25px;
 
@@ -22,13 +28,13 @@
 		}
 
 		img {
-			margin-top: -48px;
+			margin-top: -52px;
+			width: 350px;
 		}
 	}
 
 	.menus {
 		padding: 0;
-		//margin-top: -11px;
 
 		ul {
 			li {
@@ -37,10 +43,10 @@
 					color: #222;
 					font-weight: 700;
 					letter-spacing: .2px;
-					line-height: 55px;
+					line-height: 50px;
 
-					height: 55px;
-					line-height: 55px;
+					height: 50px;
+					line-height: 50px;
 					border-radius: 0 !important;
 					padding-top: 0 !important;
 					padding-bottom: 0 !important;
@@ -78,7 +84,7 @@
 		.navbar-collapse {
 			position: absolute;
 			right: 0;
-			top: 55px;
+			top: 50px;
 			background-color: #fff;
 			ul {
 				li {
