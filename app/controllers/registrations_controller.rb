@@ -3,7 +3,6 @@ class RegistrationsController < Devise::RegistrationsController
 	def create
 		@contractor_params= contractor_params
 		build_resource(sign_up_params)
-		binding.pry
 
 		resource.name = @contractor_params[:name]
 		resource.phone_number = @contractor_params[:phone_number].gsub(/\D/, '')[0..9]
