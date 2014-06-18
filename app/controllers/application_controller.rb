@@ -22,4 +22,16 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for resource
     after_path
   end
+
+  protected
+
+  def configure_permitted_parameters
+    # devise_parameter_sanitizer.for(:sign_up) do |u|
+    #   u.permit(:email, :password, :password_confirmation, :name, :phone_number, {:location})
+    # end
+
+    # devise_parameter_sanitizer.for(:sign_up) << :name
+    # devise_parameter_sanitizer.for(:sign_up) << :phone_number
+    # devise_parameter_sanitizer.for(:sign_up) << :location
+  end
 end
