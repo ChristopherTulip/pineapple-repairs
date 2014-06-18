@@ -13,4 +13,7 @@ class PagesController < ApplicationController
   def mail_in
   end
 
+  def after_sign_up
+  end
+
 end

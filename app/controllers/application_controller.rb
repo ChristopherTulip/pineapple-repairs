@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
       redirect_to contractor_path(current_contractor), notice: "Sorry this is an admin only area!"
     end
   end
+
+  def after_sign_in_path_for resource
+    after_path
+  end
 end

@@ -38,11 +38,11 @@ PineappleRepairs::Application.routes.draw do
     end
   end
 
-  get "/contact",  to: "pages#contact"
-  get "/about",    to: "pages#about"
-  get "/repairs",  to: "devices#index"
-  get "/diy",      to: "pages#diy"
-  get "/mail-in",  to: "pages#mail_in"
+  get "/after",         to: "pages#after_sign_up"
+  get "/contact",       to: "pages#contact"
+  get "/about",         to: "pages#about"
+  get "/repairs",       to: "devices#index"
+  get "/diy",           to: "pages#diy"
 
   root 'pages#index'
 end
